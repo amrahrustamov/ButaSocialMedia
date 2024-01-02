@@ -1,0 +1,26 @@
+.max-height{
+    height: 100%;
+}
+.signIn{
+    background-color: bisque;
+    height: auto;
+}
+.container{
+    background-color: aqua;
+    height: 100vh;
+}
+.topPartContainer{
+    height: 15%;
+    background-color: rgb(255, 0, 191);
+}
+.topPart{
+    background-color: blue;
+}
+.signInSection{
+    height: 55%;
+    background-color: blueviolet;
+}
+.bottomPart{
+    background-color: brown;
+    height: 10%;
+}
