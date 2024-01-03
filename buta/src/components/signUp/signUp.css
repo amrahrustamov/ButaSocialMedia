@@ -5,7 +5,7 @@ input{
     font-size: 45px;
 }
 .signIn{
-    height: auto;
+    min-height: 100vh;
     background-color: #F7F7FF;
 }
 .topPart{
@@ -15,6 +15,7 @@ input{
     justify-content: center;
     align-items: center;
 }
+
 .topPart h4{
     font-size: 1em;
 }
@@ -36,6 +37,7 @@ input{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 .conLogo{
     border: 1px solid #E6EBF4;
@@ -46,22 +48,18 @@ input{
     align-items: center;
     padding: 10px;
 }
+.inputs{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+}
 .conInput{
     display: flex;
     flex-direction: row;
+    width: 100%;
     border: 1px solid #E6EBF4;
     border-radius: 5px;
-}
-.username{
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-}
-.password{
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    position: relative;
 }
 .forgetPassword{
 position: absolute;
@@ -80,12 +78,10 @@ right: 0;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    height: 100vh;
+    height: auto;
 }
 .input-with-margin-left{
     padding-left: 20px;
     outline: none;
-}
-.form-check-label{
-    margin-left: 5px;
+    width: 100%;
 }

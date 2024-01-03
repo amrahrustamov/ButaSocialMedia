@@ -1,9 +1,10 @@
 import React from 'react'
-import './style.css'
+import './signIn.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { CiUser } from "react-icons/ci";
+import { MdOutlineMailLock } from "react-icons/md";
 import { PiLockKeyFill } from "react-icons/pi";
 import { FcMindMap } from "react-icons/fc";
+import { Link } from 'react-router-dom';
 
 const SignIn = () => {
   return (
@@ -22,18 +23,18 @@ const SignIn = () => {
                         <div className="p-4 card-body">
                             <div className="inCardBody">
                                 <form action="" className='formBox'>
-                                    <div className="mb-3 username">
+                                    <div className="mb-3 username inputs">
                                         <label className='form-label'>Email</label>
                                         <div className="mb-3 conInput">
                                             <div className="conLogo">
-                                                <CiUser className='userLogo'/>
+                                                <MdOutlineMailLock className='userLogo'/>
                                             </div>
                                             <input type="text" name="email" id="email" placeholder='Enter email' className='input-with-margin-left'/>
                                         </div>
                                     </div>
-                                    <div className="mb-3 password">
+                                    <div className="mb-3 password inputs">
                                         <div className="float-end">
-                                            <a href="/" className='font-size-13 text-muted forgetPassword'>Forget password?</a>
+                                            <a href="/" className='text-muted forgetPassword'>Forget password?</a>
                                         </div>
                                         <label className='form-label'>Password</label>
                                         <div className="mb-3 conInput">
@@ -44,11 +45,11 @@ const SignIn = () => {
                                         </div>
 
                                     </div>
-                                    <div className="mb-4 float-start checkBox">
+                                    <div className="mb-4 checkBox inputs">
                                         <input type="checkbox" id="remember-check" className='form-check-input'/>
                                         <label for="remember-check" className='form-check-label'>Remember me</label>
                                     </div>
-                                    <div className="buttonBox">
+                                    <div className="buttonBox inputs">
                                         <button type='submit' className='btn btn-primary d-block w-100'>Sign in</button>
                                     </div>
                                 </form>
@@ -56,7 +57,7 @@ const SignIn = () => {
                         </div>
                     </div>
                     <div className="bottomPart text-center">
-                        <p>Don't have an account ? <a href="/" >Signup now</a></p>                       
+                        <p>Don't have an account ? <Link to={'/sign_up'}>Signup now</Link></p>                       
                         <p>
                         © 2024 Buta. Created by Amrah Rustamov
                         </p>
