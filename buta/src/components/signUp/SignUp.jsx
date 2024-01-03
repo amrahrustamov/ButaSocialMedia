@@ -1,4 +1,5 @@
-import './signUp.css'
+import React from 'react'
+import '../../../src/App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Link } from 'react-router-dom'
 import { CiUser } from "react-icons/ci";
@@ -13,7 +14,7 @@ const SignUp = () => {
   return (
     <div className="signUp">
         <div className="container">
-            <div className="justify-content-center row">
+            <div className=" d-flex justify-content-center row box">
                 <div className="col-md-8 col-lg-6 col-xl-5 conBoxes">
                     <div className="topPartContainer">
                         <div className="topPart text-center p-2">

@@ -1,0 +1,99 @@
+
+.signUp{
+    background-color: #F7F7FF;
+    input{
+        border: 1px solid #E6EBF4;
+    }
+
+    .container{
+
+        .box{
+            height: auto;
+
+            .conBoxes{
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                min-height: 950px;
+
+                .topPartContainer{
+
+                    .topPart{
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+
+                        .emblemOfSite{
+                            font-size: 45px;
+                        }
+                        
+                        .topPart h4{
+                            font-size: 1em;
+                        }
+                        .topPart p{
+                            font-size: 1em;
+                        }
+                    }
+                }
+                .signInSection{
+                    background-color: white;
+                    border-radius: 8px;
+                    box-shadow: 0px 0px 50px 1px;
+
+                    .card-body{
+                        height: 100%;
+
+                        .inCardBody{
+                            height: 100% !important;
+
+                            .formBox{
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;
+
+                                .inputs{
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: start;
+                                    width: 100%;
+
+                                    .conInput{
+                                        display: flex;
+                                        flex-direction: row;
+                                        width: 100%;
+                                        border: 1px solid #E6EBF4;
+                                        border-radius: 5px;
+
+                                        .conLogo{
+                                            border: 1px solid #E6EBF4;
+                                            border-top-left-radius: 5px;
+                                            border-bottom-left-radius: 5px;
+                                            background-color: #F8F9FA;
+                                            display: flex;
+                                            align-items: center;
+                                            padding: 10px;
+
+                                        }
+                                        .input-with-margin-left{
+                                            padding-left: 20px;
+                                            outline: none;
+                                            width: 100%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .bottomPart{
+                    p{
+                        margin: 10px;
+                    }
+                }
+            }
+        }
+    }
+}

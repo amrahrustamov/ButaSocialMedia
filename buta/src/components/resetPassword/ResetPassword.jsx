@@ -1,5 +1,5 @@
 import React from 'react'
-import '../resetPassword/resetPassword.css'
+import '../../../src/App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { MdOutlineMailLock } from "react-icons/md";
 import { FcMindMap } from "react-icons/fc";
@@ -9,8 +9,8 @@ const ResetPassword = () => {
   return (
     <div className="resetPassword">
         <div className="container">
-            <div className="justify-content-center row">
-                <div className="col-md-8 col-lg-6 col-xl-5 conBoxes">
+            <div className="justify-content-center row bcb">
+                <div className="col-md-8 col-lg-6 col-xl-5 conBoxes2">
                     <div className="topPartContainer text-center">
                         <div className="topPart text-center p-2">
                             <a href="/" className='emblemOfSite'><FcMindMap />Buta<FcMindMap /></a>

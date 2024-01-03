@@ -1,5 +1,5 @@
 import React from 'react'
-import './signIn.css'
+import '../../../src/App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { MdOutlineMailLock } from "react-icons/md";
 import { PiLockKeyFill } from "react-icons/pi";
@@ -10,8 +10,8 @@ const SignIn = () => {
   return (
     <div className="signIn">
         <div className="container">
-            <div className="justify-content-center row">
-                <div className="col-md-8 col-lg-6 col-xl-5 conBoxes">
+            <div className="bcb justify-content-center row">
+                <div className="col-md-8 col-lg-6 col-xl-5 conBoxes1">
                     <div className="topPartContainer text-center">
                         <div className="topPart text-center p-2">
                             <a href="/" className='emblemOfSite'><FcMindMap />Buta<FcMindMap /></a>
@@ -33,13 +33,13 @@ const SignIn = () => {
                                         </div>
                                     </div>
                                     <div className="mb-3 password inputs">
-                                        <div className="float-end">
+                                        <div className="float-end passwordBox">
                                             <Link to={'/reset_password'} className='text-muted forgetPassword'>Forget password?</Link>
                                         </div>
                                         <label className='form-label'>Password</label>
                                         <div className="mb-3 conInput">
                                             <div className="conLogo">
-                                                <PiLockKeyFill className='passwordLogo'/>
+                                                <PiLockKeyFill />
                                             </div>
                                             <input type="password" name="password" id="password" placeholder='Enter password' className='input-with-margin-left'/>
                                         </div>
