@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './signUp.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Link } from 'react-router-dom'
@@ -10,8 +10,9 @@ import { BsCalendar2Date } from "react-icons/bs";
 import { MdOutlinePhoneAndroid } from "react-icons/md";
 
 const SignUp = () => {
+
   return (
-    <div className="signIn">
+    <div className="signUp">
         <div className="container">
             <div className="justify-content-center row">
                 <div className="col-md-8 col-lg-6 col-xl-5 conBoxes">
