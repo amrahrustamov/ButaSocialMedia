@@ -1,26 +1,91 @@
-.max-height{
-    height: 100%;
+input{
+    border: 1px solid #E6EBF4;
+}
+.emblemOfSite{
+    font-size: 45px;
 }
 .signIn{
-    background-color: bisque;
     height: auto;
-}
-.container{
-    background-color: aqua;
-    height: 100vh;
-}
-.topPartContainer{
-    height: 15%;
-    background-color: rgb(255, 0, 191);
+    background-color: #F7F7FF;
 }
 .topPart{
-    background-color: blue;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.topPart h4{
+    font-size: 1em;
+}
+.topPart p{
+    font-size: 1em;
 }
 .signInSection{
-    height: 55%;
-    background-color: blueviolet;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 0px 50px 1px;
 }
-.bottomPart{
-    background-color: brown;
-    height: 10%;
+.card-body{
+    height: 100%;
+}
+.inCardBody{
+    height: 100% !important;
+}
+.formBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.conLogo{
+    border: 1px solid #E6EBF4;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-color: #F8F9FA;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.conInput{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #E6EBF4;
+    border-radius: 5px;
+}
+.username{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.password{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    position: relative;
+}
+.forgetPassword{
+position: absolute;
+right: 0;
+}
+.checkBox{
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    position: relative;
+}
+.bottomPart p{
+    margin: 10px;
+}
+.conBoxes{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+.input-with-margin-left{
+    padding-left: 20px;
+    outline: none;
+}
+.form-check-label{
+    margin-left: 5px;
 }
