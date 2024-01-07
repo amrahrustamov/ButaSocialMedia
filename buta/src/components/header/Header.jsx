@@ -3,9 +3,12 @@ import '../../App.css'
 import { FcMindMap } from 'react-icons/fc'
 import { CiSearch } from 'react-icons/ci'
 import { AiOutlineHome } from "react-icons/ai";
-import { NavLink } from 'react-router-dom';
-import { LiaUserFriendsSolid } from "react-icons/lia";
-import { TfiLayoutMediaOverlay } from "react-icons/tfi";
+import { Link, NavLink } from 'react-router-dom';
+import { LiaUserFriendsSolid, LiaLayerGroupSolid } from "react-icons/lia";
+import { CgMenuGridO } from "react-icons/cg";
+import { BiSolidMessageDetail } from "react-icons/bi";
+import { IoMdNotifications } from "react-icons/io";
+import { FaUser } from "react-icons/fa";
 
 const Header = () => {
   return (
@@ -17,13 +20,20 @@ const Header = () => {
             </div>
             <div className="col-lx-3 col-lg-3 col-md-4 col-sm-4 middlePartOfHeader">
                 <div className='containerOfMiddlePart'>
-                    <div><NavLink><LiaUserFriendsSolid /></NavLink></div>
-                    <div><NavLink><AiOutlineHome /></NavLink></div>
-                    <div><NavLink><TfiLayoutMediaOverlay /></NavLink></div>   
+                    <div id='friendsStory'><NavLink to={'/friends_story'}><LiaUserFriendsSolid /></NavLink></div>
+                    <div id='allStory'><NavLink to={'/all_story'}><AiOutlineHome /></NavLink></div>
+                    <div id='pageStory'><NavLink to={'/group_story'}><LiaLayerGroupSolid /></NavLink></div>   
                 </div>
                  
             </div>
-            <div className="col-lx-3 col-lg-3 col-md-4 col-sm-4 rightPartOfHeader"></div>
+            <div className="col-lx-3 col-lg-3 col-md-4 col-sm-4 rightPartOfHeader">
+              <div className="containerOfRightPart">
+                <div className='menu'><Link><CgMenuGridO /></Link></div>
+                <div className='messages'><Link><BiSolidMessageDetail /></Link></div>
+                <div className='notifications'><Link><IoMdNotifications /></Link></div>
+                <div className='profile'><Link><FaUser /></Link></div>
+              </div>
+            </div>
       </div>
     </header>
   )
