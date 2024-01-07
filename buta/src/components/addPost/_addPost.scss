@@ -1,7 +1,7 @@
 .addPost{
     background-color: white;
     border-radius: 20px;
-    height: 150px;
+    height: 90px;
     width: 100%;
 
     .containerAddPost{
@@ -10,10 +10,10 @@
         padding: 15px;
 
         .topPartOfAddPost{
-            border-bottom: 1px solid rgba(0, 0, 0, 0.158);
-            height: 50%;
+            height: 100%;
             width: 100%;
             display: flex;
+            align-items: center;
 
             .profileImg{
                 border: 1px solid rgba(0, 0, 0, 0.353);
@@ -39,12 +39,9 @@
                     height: 100%;
                     border-radius: 50px;
                     padding-left: 30px;
+                    outline: none;
                 }
             }
-        }
-        .bottomPartOfAddPost{
-            height: 50%;
-            width: 100%;
         }
     }
 }
