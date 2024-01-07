@@ -31,7 +31,7 @@ const Header = () => {
                 <div className='menu'><Link><CgMenuGridO /></Link></div>
                 <div className='messages'><Link><BiSolidMessageDetail /></Link></div>
                 <div className='notifications'><Link><IoMdNotifications /></Link></div>
-                <div className='profile'><Link><FaUser /></Link></div>
+                <div className='profile'><Link><img src="https://img.freepik.com/free-photo/handsome-bearded-guy-posing-against-white-wall_273609-20597.jpg?size=626&ext=jpg&ga=GA1.1.1412446893.1704585600&semt=sph" alt="logo" /></Link></div>
               </div>
             </div>
       </div>

@@ -390,9 +390,17 @@ header .containerHeader .rightPartOfHeader .containerOfRightPart div {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 header .containerHeader .rightPartOfHeader .containerOfRightPart div svg {
   font-size: 30px;
+}
+header .containerHeader .rightPartOfHeader .containerOfRightPart div img {
+  width: 45px;
+  height: 45px;
+  overflow: hidden;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .homepage {
