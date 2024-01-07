@@ -1,38 +1,286 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a {
+  text-decoration: none !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.signIn {
   min-height: 100vh;
+  background-color: #F7F7FF;
+}
+.signIn input {
+  border: 1px solid #E6EBF4;
+}
+.signIn .container .bcb {
+  height: auto;
+}
+.signIn .container .bcb .conBoxes1 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 800px;
+}
+.signIn .container .bcb .conBoxes1 .topPartContainer .topPart {
+  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+}
+.signIn .container .bcb .conBoxes1 .topPartContainer .topPart .emblemOfSite {
+  font-size: 45px;
+}
+.signIn .container .bcb .conBoxes1 .topPartContainer .topPart h4 {
+  font-size: 1em;
+}
+.signIn .container .bcb .conBoxes1 .topPartContainer .topPart p {
+  font-size: 1em;
+}
+.signIn .container .bcb .conBoxes1 .signInSection {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 0px 50px 1px;
+}
+.signIn .container .bcb .conBoxes1 .signInSection .card-body {
+  height: 100%;
+}
+.signIn .container .bcb .conBoxes1 .signInSection .card-body .inCardBody {
+  height: 100% !important;
+}
+.signIn .container .bcb .conBoxes1 .signInSection .card-body .inCardBody .formBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.signIn .container .bcb .conBoxes1 .signInSection .card-body .inCardBody .formBox .username {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.signIn .container .bcb .conBoxes1 .signInSection .card-body .inCardBody .formBox .username .conInput {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border: 1px solid #E6EBF4;
+  border-radius: 5px;
+}
+.signIn .container .bcb .conBoxes1 .signInSection .card-body .inCardBody .formBox .username .conInput .conLogo {
+  border: 1px solid #E6EBF4;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: #F8F9FA;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+.signIn .container .bcb .conBoxes1 .signInSection .card-body .inCardBody .formBox .username .conInput .input-with-margin-left {
+  padding-left: 20px;
+  outline: none;
+  width: 100%;
+}
+.signIn .container .bcb .conBoxes1 .signInSection .card-body .inCardBody .formBox .inputs {
+  width: 100%;
+}
+.signIn .container .bcb .conBoxes1 .signInSection .card-body .inCardBody .formBox .password {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  position: relative;
+}
+.signIn .container .bcb .conBoxes1 .signInSection .card-body .inCardBody .formBox .password .passwordBox .forgetPassword {
+  position: absolute;
+  right: 0;
+  font-size: 13px;
+}
+.signIn .container .bcb .conBoxes1 .signInSection .card-body .inCardBody .formBox .password .conInput {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border: 1px solid #E6EBF4;
+  border-radius: 5px;
+}
+.signIn .container .bcb .conBoxes1 .signInSection .card-body .inCardBody .formBox .password .conInput .conLogo {
+  border: 1px solid #E6EBF4;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: #F8F9FA;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+.signIn .container .bcb .conBoxes1 .signInSection .card-body .inCardBody .formBox .password .conInput .input-with-margin-left {
+  padding-left: 20px;
+  outline: none;
+  width: 100%;
+}
+.signIn .container .bcb .conBoxes1 .signInSection .card-body .inCardBody .formBox .checkBox {
+  display: flex;
+  flex-direction: row;
+}
+.signIn .container .bcb .conBoxes1 .signInSection .card-body .inCardBody .formBox .checkBox .form-check-label {
+  margin-left: 5px;
+}
+.signIn .container .bcb .conBoxes1 .signInSection .card-body .inCardBody .formBox .inputs {
+  width: 100%;
+}
+.signIn .container .bcb .conBoxes1 .bottomPart p {
+  margin: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+input {
+  border: 1px solid #E6EBF4;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.resetPassword {
+  background-color: #F7F7FF;
 }
+.resetPassword .container .bcb {
+  height: auto;
+}
+.resetPassword .container .bcb .conBoxes2 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 950px;
+}
+.resetPassword .container .bcb .conBoxes2 .topPartContainer .topPart {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.resetPassword .container .bcb .conBoxes2 .topPartContainer .topPart .emblemOfSite {
+  font-size: 45px;
+}
+.resetPassword .container .bcb .conBoxes2 .topPartContainer .topPart .topPart h4 {
+  font-size: 1em;
+}
+.resetPassword .container .bcb .conBoxes2 .topPartContainer .topPart .topPart p {
+  font-size: 1em;
+}
+.resetPassword .container .bcb .conBoxes2 .signInSection {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 0px 50px 1px;
+}
+.resetPassword .container .bcb .conBoxes2 .signInSection .card-body {
+  height: 100%;
+}
+.resetPassword .container .bcb .conBoxes2 .signInSection .card-body .inCardBody {
+  height: 100% !important;
+}
+.resetPassword .container .bcb .conBoxes2 .signInSection .card-body .inCardBody .formBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.resetPassword .container .bcb .conBoxes2 .signInSection .card-body .inCardBody .formBox .inputs {
+  width: 100%;
+}
+.resetPassword .container .bcb .conBoxes2 .signInSection .card-body .inCardBody .formBox .inputs .conInput {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #E6EBF4;
+  border-radius: 5px;
+}
+.resetPassword .container .bcb .conBoxes2 .signInSection .card-body .inCardBody .formBox .inputs .conInput .conLogo {
+  border: 1px solid #E6EBF4;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: #F8F9FA;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+.resetPassword .container .bcb .conBoxes2 .signInSection .card-body .inCardBody .formBox .inputs .conInput .input-with-margin-left {
+  padding-left: 20px;
+  outline: none;
+  width: 100%;
+}
+.resetPassword .container .bcb .conBoxes2 .bottomPart p {
+  margin: 10px;
+}
+
+.signUp {
+  background-color: #F7F7FF;
+}
+.signUp input {
+  border: 1px solid #E6EBF4;
+}
+.signUp .container .box {
+  height: auto;
+}
+.signUp .container .box .conBoxes {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 950px;
+}
+.signUp .container .box .conBoxes .topPartContainer .topPart {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.signUp .container .box .conBoxes .topPartContainer .topPart .emblemOfSite {
+  font-size: 45px;
+}
+.signUp .container .box .conBoxes .topPartContainer .topPart .topPart h4 {
+  font-size: 1em;
+}
+.signUp .container .box .conBoxes .topPartContainer .topPart .topPart p {
+  font-size: 1em;
+}
+.signUp .container .box .conBoxes .signInSection {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 0px 50px 1px;
+}
+.signUp .container .box .conBoxes .signInSection .card-body {
+  height: 100%;
+}
+.signUp .container .box .conBoxes .signInSection .card-body .inCardBody {
+  height: 100% !important;
+}
+.signUp .container .box .conBoxes .signInSection .card-body .inCardBody .formBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.signUp .container .box .conBoxes .signInSection .card-body .inCardBody .formBox .inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 100%;
+}
+.signUp .container .box .conBoxes .signInSection .card-body .inCardBody .formBox .inputs .conInput {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border: 1px solid #E6EBF4;
+  border-radius: 5px;
+}
+.signUp .container .box .conBoxes .signInSection .card-body .inCardBody .formBox .inputs .conInput .conLogo {
+  border: 1px solid #E6EBF4;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: #F8F9FA;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+.signUp .container .box .conBoxes .signInSection .card-body .inCardBody .formBox .inputs .conInput .input-with-margin-left {
+  padding-left: 20px;
+  outline: none;
+  width: 100%;
+}
+.signUp .container .box .conBoxes .bottomPart p {
+  margin: 10px;
+}/*# sourceMappingURL=App.css.map */
