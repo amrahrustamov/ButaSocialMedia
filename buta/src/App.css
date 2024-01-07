@@ -406,4 +406,66 @@ header .containerHeader .rightPartOfHeader .containerOfRightPart div img {
 .homepage {
   background-color: #F7F7FF;
   width: 100%;
+}
+.homepage main {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.homepage main .leftPartOfHomePage {
+  width: 33%;
+}
+.homepage main .middlePartOfHomePage {
+  width: 33%;
+  padding: 30px 10px;
+}
+.homepage main .rightPartOfHomePage {
+  width: 33%;
+}
+
+.addPost {
+  background-color: white;
+  border-radius: 20px;
+  height: 150px;
+  width: 100%;
+}
+.addPost .containerAddPost {
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+}
+.addPost .containerAddPost .topPartOfAddPost {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.158);
+  height: 50%;
+  width: 100%;
+  display: flex;
+}
+.addPost .containerAddPost .topPartOfAddPost .profileImg {
+  border: 1px solid rgba(0, 0, 0, 0.353);
+  height: 55px;
+  width: 55px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.addPost .containerAddPost .topPartOfAddPost .profileImg img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.addPost .containerAddPost .topPartOfAddPost .input {
+  height: 50px;
+  width: 90%;
+  display: flex;
+  padding-left: 20px;
+}
+.addPost .containerAddPost .topPartOfAddPost .input input {
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  padding-left: 30px;
+}
+.addPost .containerAddPost .bottomPartOfAddPost {
+  height: 50%;
+  width: 100%;
 }/*# sourceMappingURL=App.css.map */
