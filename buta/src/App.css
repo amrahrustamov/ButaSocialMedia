@@ -283,4 +283,54 @@ input {
 }
 .signUp .container .box .conBoxes .bottomPart p {
   margin: 10px;
+}
+
+.sidebar {
+  background-color: #dee6f8;
+  border-right: 2px solid rgba(150, 151, 151, 0.3607843137);
+  height: 100vh;
+  width: 20%;
+  position: fixed;
+  padding: 15px;
+  overflow-y: auto;
+}
+.sidebar .boxInSidebar {
+  border-radius: 6px;
+  background-color: rgba(237, 242, 252, 0.7411764706);
+}
+.sidebar .boxInSidebar .logoAdminPanel {
+  font-weight: bold;
+  font-size: 2rem;
+  color: cadetblue;
+}
+.sidebar .boxInSidebar .adminOptions {
+  border-top: 1px solid black;
+}
+.sidebar .boxInSidebar .adminOptions ul {
+  list-style-type: none;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sidebar .boxInSidebar .adminOptions ul li {
+  margin: 20px 0;
+  font-size: 20px;
+}
+.sidebar .boxInSidebar .adminOptions ul li a {
+  color: rgb(105, 135, 137);
+}
+.sidebar .boxInSidebar .adminOptions ul li a:hover {
+  color: rgb(4, 85, 94);
+}
+
+main {
+  right: 0;
+  min-height: 100vh;
+  border: 1px solid red;
+  position: absolute;
+}
+main .boxOfMain {
+  width: 100%;
+  position: static;
 }/*# sourceMappingURL=App.css.map */

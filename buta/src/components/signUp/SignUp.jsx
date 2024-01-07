@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../../src/App.css'
+import '../../App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Link } from 'react-router-dom'
 import { CiUser } from "react-icons/ci";

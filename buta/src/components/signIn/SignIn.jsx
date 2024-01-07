@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../../src/App.css'
+import '../../App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { MdOutlineMailLock } from "react-icons/md";
 import { PiLockKeyFill } from "react-icons/pi";

@@ -1,0 +1,42 @@
+.sidebar{
+    background-color: #dee6f8;
+    border-right: 2px solid #9697975c;
+    height: 100vh;
+    width: 20%;
+    position: fixed ;
+    padding: 15px;
+    overflow-y:auto;
+
+    .boxInSidebar{
+        border-radius: 6px;
+        background-color: #edf2fcbd;
+
+        .logoAdminPanel{
+            font-weight: bold;
+            font-size: 2rem;
+            color: cadetblue;
+        }
+        .adminOptions{
+            border-top: 1px solid black;
+            
+            ul{
+                list-style-type: none;
+                padding: 20px 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                li{
+                    margin: 20px 0;
+                    font-size: 20px;
+                    a{
+                        color: rgb(105, 135, 137);
+                    }
+                    a:hover{
+                        color: rgb(4, 85, 94);
+                    }
+                }
+            }
+        }
+    }
+}
