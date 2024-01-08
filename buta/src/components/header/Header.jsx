@@ -8,7 +8,6 @@ import { LiaUserFriendsSolid, LiaLayerGroupSolid } from "react-icons/lia";
 import { CgMenuGridO } from "react-icons/cg";
 import { BiSolidMessageDetail } from "react-icons/bi";
 import { IoMdNotifications } from "react-icons/io";
-import { FaUser } from "react-icons/fa";
 
 const Header = () => {
   return (
