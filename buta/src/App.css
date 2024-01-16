@@ -535,6 +535,12 @@ header .containerHeader .rightPartOfHeader .containerOfRightPart div img {
   border-top: 1px solid rgba(0, 0, 0, 0.175);
   margin: 10px 0;
 }
+.postCard .about {
+  padding: 10px;
+}
+.postCard .about .containerAbout p {
+  font-size: 15px;
+}
 .postCard .bottomPostCard .countOfActivites {
   display: flex;
   align-items: center;

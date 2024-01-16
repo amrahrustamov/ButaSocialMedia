@@ -79,6 +79,15 @@
         border-bottom:1px solid rgba(0, 0, 0, 0.175);
         border-top:1px solid rgba(0, 0, 0, 0.175);
         margin: 10px 0;
+
+    }
+    .about{
+        padding: 10px;
+        .containerAbout{
+            p{
+                font-size: 15px;
+            }
+        }
     }
     .bottomPostCard{
 
