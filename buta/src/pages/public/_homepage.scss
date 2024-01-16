@@ -1,0 +1,20 @@
+.homepage{
+    background-color: #F7F7FF;
+    width: 100%;
+
+    main{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        .leftPartOfHomePage{
+            width: 33%;
+        }
+        .middlePartOfHomePage{
+            width: 33%;
+            padding: 30px 10px;
+        }
+        .rightPartOfHomePage{
+            width: 33%;
+        }
+    }
+}

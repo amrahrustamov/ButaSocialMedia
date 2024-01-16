@@ -1,0 +1,128 @@
+header{
+    height: 60px;
+    width: 100%;
+    background-color: white;
+    padding: 5px 20px;
+
+    .containerHeader{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        .leftPartOfHeader{
+            display: flex;
+
+            .logo{
+                
+                width: 20%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-top: 10px;
+                
+                .emblemOfSite{
+                    display: flex;
+                    flex-direction: column;
+                    
+                    svg{
+                        width: 100%;
+                        height: 20px;  
+                    }
+                    h2{
+                        font-size: 20px;
+                    }
+                }
+            }
+            .searchInput{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                padding-left: 20px;
+                label{
+                    height: 45px;
+                    width: 50px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                        margin-left: 4px;
+                    svg{
+                        font-size: 30px;
+                    }
+                }
+                .search{
+                    padding-left: 50px;
+                    width: 99%;
+                    height: 40px;
+                    border-radius: 50px;
+                    outline: none;
+                }
+            }
+        }
+        .middlePartOfHeader{
+            display: flex;
+            justify-content: center;
+            .containerOfMiddlePart{
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                div{
+                    height: 100%;
+                    width: 150px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 10px;
+                    
+                    svg{
+                        font-size: 30px;
+                    }
+                    .active{
+                        border-bottom: 2px solid black;
+                    }
+                }
+                #friendsStory:hover{
+                    background-color: #F7F7FF;
+                }
+                #allStory:hover{
+                    background-color: #F7F7FF;
+                }
+                #pageStory:hover{
+                    background-color: #F7F7FF;
+                }
+            }
+        }
+        .rightPartOfHeader{
+
+            .containerOfRightPart{
+                display: flex;
+                justify-content: end;
+                align-items: center;
+                height: 100%;
+
+                div{
+                    width: 45px;
+                    height: 45px;
+                    background-color: #e6e6ec;
+                    margin-right: 10px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    overflow: hidden;
+
+                    svg{
+                        font-size: 30px;
+                    }
+                    img{
+                        width: 45px;
+                        height: 45px;
+                        overflow: hidden;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+    }
+}
