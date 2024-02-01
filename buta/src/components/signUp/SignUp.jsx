@@ -1,12 +1,11 @@
-import React, { useState, useRef, useHistory } from 'react'
+import React, { useState } from 'react'
 import '../../../src/App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Link, Route } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { CiUser } from "react-icons/ci";
 import { PiLockKeyFill } from "react-icons/pi";
 import { FcMindMap } from "react-icons/fc";
 import { MdOutlineMailLock } from "react-icons/md";
-import { BsCalendar2Date } from "react-icons/bs";
 import { MdOutlinePhoneAndroid } from "react-icons/md";
 
 const SignUp = () => {

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../../../src/App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { MdOutlineMailLock } from "react-icons/md";
@@ -7,6 +7,58 @@ import { FcMindMap } from "react-icons/fc";
 import { Link } from 'react-router-dom';
 
 const SignIn = () => {
+
+    const link = 'http://localhost:5247/api/Authentication/login';
+
+    const [loginFailed, setLoginFailed] = useState(false)
+    const [notification, setNotification] = useState()
+
+    const [loginUser, setLoginUser] = useState({
+        email:"",
+        password: "",
+    });
+    const [modelLoginUser, setModelLoginUser] = useState(loginUser)
+    const postUser = async () => {
+        const data = {
+            email: loginUser.email,
+            password: loginUser.password,
+        };
+
+        fetch(link, {
+            method: 'GET',
+            headers: {
+            'Content-Type': 'application/json',
+        },
+            body: JSON.stringify(data),
+        })
+        .then(response => {
+            if (!response.ok) {
+                setLoginFailed(true);
+                setNotification("Login failed");
+                throw new Error('Network response was not ok');
+            }
+            setLoginUser(modelLoginUser)
+            return response.json();
+        })
+        .then(data => {
+            console.log(data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    };
+        const handleOnChange = (event) => {
+            setLoginFailed(false);
+            setLoginUser({
+                ...loginUser,
+                [event.target.name]: event.target.value
+            });
+        };
+        const handleButtonClick = (event) => {
+            event.preventDefault();
+            postUser();
+        };
+
   return (
     <div className="signIn">
         <div className="container">
@@ -41,16 +93,24 @@ const SignIn = () => {
                                             <div className="conLogo">
                                                 <PiLockKeyFill />
                                             </div>
-                                            <input type="password" name="password" id="password" placeholder='Enter password' className='input-with-margin-left'/>
+                                            <input type="password" name="password" id="password" placeholder='Enter password' className='input-with-margin-left' onChange={handleOnChange}/>
                                         </div>
 
                                     </div>
                                     <div className="mb-1 checkBox inputs">
-                                        <input type="checkbox" id="remember-check" className='form-check-input'/>
+                                        <input type="checkbox" id="remember-check" className='form-check-input' onChange={handleOnChange}/>
                                         <label for="remember-check" className='form-check-label'>Remember me</label>
                                     </div>
                                     <div className="buttonBox inputs">
-                                        <button type='submit' className='btn btn-primary d-block w-100'>Sign in</button>
+                                        <button type='submit' className='btn btn-primary d-block w-100' onClick={handleButtonClick}>Sign in</button>
+                                        {loginFailed && (
+                                           
+                                           <div className='mt-1 notification d-flex align-items-center justify-content-center w-100'>                
+                                                <div className='alert alert-warning text-center'> 
+                                                {notification}
+                                              </div>
+                                         </div>
+                                       )}
                                     </div>
                                 </form>
                             </div>
