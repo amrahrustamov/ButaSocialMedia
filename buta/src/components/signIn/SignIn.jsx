@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
 import '../../../src/App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import React, { useState } from 'react'
 import { MdOutlineMailLock } from "react-icons/md";
 import { PiLockKeyFill } from "react-icons/pi";
 import { FcMindMap } from "react-icons/fc";
@@ -19,13 +19,15 @@ const SignIn = () => {
     });
     const [modelLoginUser, setModelLoginUser] = useState(loginUser)
     const postUser = async () => {
+        console.log(loginUser);
+
         const data = {
             email: loginUser.email,
             password: loginUser.password,
         };
 
         fetch(link, {
-            method: 'GET',
+            method: 'POST',
             headers: {
             'Content-Type': 'application/json',
         },
@@ -34,7 +36,7 @@ const SignIn = () => {
         .then(response => {
             if (!response.ok) {
                 setLoginFailed(true);
-                setNotification("Login failed");
+                setNotification("Register failed");
                 throw new Error('Network response was not ok');
             }
             setLoginUser(modelLoginUser)
@@ -58,7 +60,6 @@ const SignIn = () => {
             event.preventDefault();
             postUser();
         };
-
   return (
     <div className="signIn">
         <div className="container">
@@ -81,7 +82,7 @@ const SignIn = () => {
                                             <div className="conLogo">
                                                 <MdOutlineMailLock className='userLogo'/>
                                             </div>
-                                            <input type="text" name="email" id="email" placeholder='Enter email' className='input-with-margin-left'/>
+                                            <input type="text" onChange={handleOnChange} name="email" id="email" placeholder='Enter email' className='input-with-margin-left'/>
                                         </div>
                                     </div>
                                     <div className="mb-1 password inputs">
@@ -93,24 +94,24 @@ const SignIn = () => {
                                             <div className="conLogo">
                                                 <PiLockKeyFill />
                                             </div>
-                                            <input type="password" name="password" id="password" placeholder='Enter password' className='input-with-margin-left' onChange={handleOnChange}/>
+                                            <input type="password"  onChange={handleOnChange} name="password" id="password" placeholder='Enter password' className='input-with-margin-left' />
                                         </div>
 
                                     </div>
                                     <div className="mb-1 checkBox inputs">
-                                        <input type="checkbox" id="remember-check" className='form-check-input' onChange={handleOnChange}/>
+                                        <input type="checkbox" id="remember-check" className='form-check-input' />
                                         <label for="remember-check" className='form-check-label'>Remember me</label>
                                     </div>
                                     <div className="buttonBox inputs">
                                         <button type='submit' className='btn btn-primary d-block w-100' onClick={handleButtonClick}>Sign in</button>
-                                        {loginFailed && (
+                                        {/* {loginFailed && (
                                            
                                            <div className='mt-1 notification d-flex align-items-center justify-content-center w-100'>                
                                                 <div className='alert alert-warning text-center'> 
                                                 {notification}
                                               </div>
                                          </div>
-                                       )}
+                                       )} */}
                                     </div>
                                 </form>
                             </div>

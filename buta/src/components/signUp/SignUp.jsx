@@ -76,8 +76,6 @@ const SignUp = () => {
             postUser();
         };
         
-        
-        
         return (
             <div className="signUp">
         <div className="container">

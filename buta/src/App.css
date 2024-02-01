@@ -149,9 +149,7 @@ a {
 }
 .signIn .container .box .conBoxes1 .signInSection .card-body .inCardBody .formBox .inputs {
   width: 100%;
-}
-.signIn .container .box .conBoxes1 .signInSection .card-body .inCardBody .formBox .buttonBox {
-  padding: 4px 0px !important;
+  padding: 8px 0px;
 }
 .signIn .container .box .conBoxes1 .bottomPart p {
   margin: 10px;
