@@ -281,6 +281,13 @@ input {
   outline: none;
   width: 100%;
 }
+.signUp .container .box .conBoxes .signInSection .card-body .inCardBody .formBox .inputs .conInput .notificationBox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #4df37f;
+}
 .signUp .container .box .conBoxes .bottomPart p {
   margin: 10px;
 }
@@ -290,6 +297,9 @@ header {
   width: 100%;
   background-color: white;
   padding: 5px 20px;
+  position: fixed;
+  top: 0;
+  z-index: 1;
 }
 header .containerHeader {
   width: 100%;
@@ -587,4 +597,30 @@ header .containerHeader .rightPartOfHeader .containerOfRightPart div img {
   font-size: 40px;
   color: rgb(95, 95, 95);
   margin: 0 5px;
+}
+
+.sidebar {
+  background-color: #F7F7FF;
+  height: 100vh;
+  width: 20%;
+  position: fixed;
+  padding: 15px;
+  overflow-y: auto;
+}
+.sidebar .boxInSidebar .adminOptions ul {
+  list-style-type: none;
+  padding: 20px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.sidebar .boxInSidebar .adminOptions ul li {
+  margin: 20px 0;
+  font-size: 2rem;
+}
+.sidebar .boxInSidebar .adminOptions ul li a {
+  color: rgb(69, 68, 68);
+}
+.sidebar .boxInSidebar .adminOptions ul li a:hover {
+  color: black;
 }/*# sourceMappingURL=App.css.map */

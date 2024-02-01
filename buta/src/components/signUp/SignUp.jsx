@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useState, useRef, useHistory } from 'react'
 import '../../../src/App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Link } from 'react-router-dom'
+import { Link, Route } from 'react-router-dom'
 import { CiUser } from "react-icons/ci";
 import { PiLockKeyFill } from "react-icons/pi";
 import { FcMindMap } from "react-icons/fc";
@@ -11,8 +11,76 @@ import { MdOutlinePhoneAndroid } from "react-icons/md";
 
 const SignUp = () => {
 
-  return (
-    <div className="signUp">
+    
+    const link = 'http://localhost:5247/api/Authentication/register';
+
+    const [registrationSuccess, setRegistrationSuccess] = useState(false)
+    const [registrationFailed, setRegistrationFailed] = useState(false)
+    const [notification, setNotification] = useState()
+
+    const [registerUser, setRegisterUser] = useState({
+        surname: "",
+        lastname: "",
+        email:"",
+        password: "",
+        phonenumber: "",
+    });
+    const [modelRegisterUser, setModelRegisterUser] = useState(registerUser)
+    const postUser = async () => {
+        console.log(registerUser);
+
+        const data = {
+            firstName: registerUser.surname,
+            lastName: registerUser.lastname,
+            email: registerUser.email,
+            password: registerUser.password,
+            phoneNumber: registerUser.phonenumber,
+            createTime: new Date()
+        };
+
+        fetch(link, {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json',
+        },
+            body: JSON.stringify(data),
+        })
+        .then(response => {
+            if (!response.ok) {
+                setRegistrationFailed(true);
+                setRegistrationSuccess(false);
+                setNotification("Register failed");
+                throw new Error('Network response was not ok');
+            }
+            setRegisterUser(modelRegisterUser)
+            setRegistrationSuccess(true);
+            return response.json();
+        })
+        .then(data => {
+            setRegistrationSuccess(true);
+            console.log(data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    };
+        const handleOnChange = (event) => {
+            setRegistrationSuccess(false);
+            setRegistrationFailed(false);
+            setRegisterUser({
+                ...registerUser,
+                [event.target.name]: event.target.value
+            });
+        };
+        const handleButtonClick = (event) => {
+            event.preventDefault();
+            postUser();
+        };
+        
+        
+        
+        return (
+            <div className="signUp">
         <div className="container">
             <div className=" d-flex justify-content-center row box">
                 <div className="col-md-8 col-lg-6 col-xl-5 conBoxes">
@@ -33,7 +101,7 @@ const SignUp = () => {
                                             <div className="conLogo">
                                                 <MdOutlineMailLock className='userLogo'/>
                                             </div>
-                                            <input type="text" name="email" id="email" placeholder='Enter email' className='input-with-margin-left'/>
+                                            <input type="text" name="email" id="email" value={registerUser.email} onChange={handleOnChange} placeholder='Enter email' className='input-with-margin-left'/>
                                         </div>
                                     </div>
                                     <div className="mb-3 inputs">
@@ -42,7 +110,7 @@ const SignUp = () => {
                                             <div className="conLogo">
                                                 <MdOutlinePhoneAndroid className='userLogo'/>
                                             </div>
-                                            <input type="digit" name="mobile" id="mobile" placeholder='Enter phone number' className='input-with-margin-left'/>
+                                            <input type="digit" name="phonenumber" id="phonenumber" value={registerUser.phonenumber} onChange={handleOnChange} placeholder='Enter phone number' className='input-with-margin-left'/>
                                         </div>
                                     </div>
                                     <div className="mb-3 inputs">
@@ -51,39 +119,55 @@ const SignUp = () => {
                                             <div className="conLogo">
                                                 <CiUser className='userLogo'/>
                                             </div>
-                                            <input type="tel" name="name" id="name" placeholder='Enter your name' className='input-with-margin-left'/>
+                                            <input type="text" name="surname" id="surname" value={registerUser.surname} onChange={handleOnChange} placeholder='Enter your name' className='input-with-margin-left'/>
                                         </div>
                                     </div>
                                     <div className="mb-3 inputs">
-                                        <label className='form-label'>Surname</label>
+                                        <label className='form-label'>Lastname</label>
                                         <div className="mb-3 conInput">
                                             <div className="conLogo">
                                                 <CiUser className='userLogo'/>
                                             </div>
-                                            <input type="text" name="surname" id="surname" placeholder='Enter your surname' className='input-with-margin-left'/>
+                                            <input type="text" name="lastname" id="lastname" value={registerUser.lastname} onChange={handleOnChange} placeholder='Enter your lastname' className='input-with-margin-left'/>
                                         </div>
                                     </div>
-                                    <div className="mb-3 inputs">
+                                    {/* <div className="mb-3 inputs">
                                         <label className='form-label'>Date of Birth</label>
                                         <div className="mb-3 conInput">
                                             <div className="conLogo">
                                                 <BsCalendar2Date className='userLogo'/>
                                             </div>
-                                            <input type="date" name="middlename" id="middlename" placeholder='Enter your middle name' className='input-with-margin-left birthday'/>
+                                            <input type="date" name="birthdate" id="birthdate" value={registerUser.} placeholder='birthdate' className='input-with-margin-left birthday'/>
                                         </div>
-                                    </div>
+                                    </div> */}
                                     <div className="mb-3 inputs">
                                         <label className='form-label'>Password</label>
                                         <div className="mb-3 conInput">
                                             <div className="conLogo">
                                                 <PiLockKeyFill className='passwordLogo'/>
                                             </div>
-                                            <input type="password" name="password" id="password" placeholder='Enter password' className='input-with-margin-left'/>
+                                            <input type="text" name="password" id="password" value={registerUser.password} onChange={handleOnChange} placeholder='Enter password' className='input-with-margin-left'/>
                                         </div>
 
                                     </div>
                                     <div className="buttonBox inputs">
-                                        <button type='submit' className='btn btn-primary d-block w-100'>Register</button>
+                                        <button type='submit' onClick={handleButtonClick} className='btn btn-primary d-block w-100'>Register</button>
+                                        {registrationSuccess && (
+                                           
+                                           <div className='mt-3 notification d-flex align-items-center justify-content-center w-100'>
+                                                <div className='alert alert-success text-center'>
+                                                    Registration completed successfully!
+                                                </div>
+                                           </div>
+                                        )}
+                                        {registrationFailed && (
+                                           
+                                           <div className='mt-3 notification d-flex align-items-center justify-content-center w-100'>                
+                                                <div className='alert alert-warning text-center'> 
+                                                {notification}
+                                              </div>
+                                         </div>
+                                       )}
                                     </div>
                                     <div className="TermsOfUse text-center">
                                         <p>By registering you agree to the Chatvia <a href="/404">Terms of Use</a></p>

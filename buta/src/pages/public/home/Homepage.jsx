@@ -4,32 +4,31 @@ import AddPost from '../../../components/addPost/AddPost'
 import '../../../App.css'
 import PostCard from '../../../components/postCard/PostCard'
 import axios from 'axios'
+import LeftSideBar from '../../../components/leftSidebarHome/LeftSideBar'
 
 const Homepage = () => {
   const [posts, setPosts] = useState();
 
   useEffect(() =>{
     const getPosts = async () => {
-        await axios.get('https://randomuser.me/api/?results=50')
-        .then(response => setPosts(response.data.results))
-        .catch(err => console.log(err))
-    }
-    try{
-      if(!posts){
-        getPosts();
-        console.log('beli');
-      }
-    }
-      catch{
+      // Make a simple GET request
+        fetch('http://localhost:5260/api/User/GetUsers')
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error('Error:', error));
 
-      }
+  }
+    console.log(posts);
+    getPosts();
+    console.log(posts);
     
   },[posts]);
+  
   return (
     <div className='homepage'>
       <Header />
       <main>
-        <div className="leftPartOfHomePage">left part</div>
+        <div className="leftPartOfHomePage"><LeftSideBar /></div>
         <div className="middlePartOfHomePage">
           <AddPost />
             <div className="postCards">
