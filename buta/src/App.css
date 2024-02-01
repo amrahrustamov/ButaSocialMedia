@@ -15,60 +15,72 @@ a {
 .signIn input {
   border: 1px solid #E6EBF4;
 }
-.signIn .container .bcb {
-  height: auto;
+.signIn .container {
+  min-height: 100vh;
 }
-.signIn .container .bcb .conBoxes1 {
+.signIn .container .box {
+  min-height: 100vh;
+}
+.signIn .container .box .conBoxes1 {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  min-height: 800px;
+  height: 90%;
 }
-.signIn .container .bcb .conBoxes1 .topPartContainer .topPart {
+.signIn .container .box .conBoxes1 .topPartContainer {
+  height: 20%;
+}
+.signIn .container .box .conBoxes1 .topPartContainer .topPart {
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.signIn .container .bcb .conBoxes1 .topPartContainer .topPart .emblemOfSite {
-  font-size: 45px;
+.signIn .container .box .conBoxes1 .topPartContainer .topPart .emblemOfSite {
+  font-size: 35px;
 }
-.signIn .container .bcb .conBoxes1 .topPartContainer .topPart h4 {
+.signIn .container .box .conBoxes1 .topPartContainer .topPart h4 {
+  font-size: 20px;
+}
+.signIn .container .box .conBoxes1 .topPartContainer .topPart p {
   font-size: 1em;
 }
-.signIn .container .bcb .conBoxes1 .topPartContainer .topPart p {
-  font-size: 1em;
-}
-.signIn .container .bcb .conBoxes1 .signInSection {
+.signIn .container .box .conBoxes1 .signInSection {
   background-color: white;
   border-radius: 8px;
   box-shadow: 0px 0px 50px 1px;
+  height: 60%;
 }
-.signIn .container .bcb .conBoxes1 .signInSection .card-body {
+.signIn .container .box .conBoxes1 .signInSection .card-body {
   height: 100%;
 }
-.signIn .container .bcb .conBoxes1 .signInSection .card-body .inCardBody {
+.signIn .container .box .conBoxes1 .signInSection .card-body .inCardBody {
   height: 100% !important;
 }
-.signIn .container .bcb .conBoxes1 .signInSection .card-body .inCardBody .formBox {
+.signIn .container .box .conBoxes1 .signInSection .card-body .inCardBody .formBox {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
-.signIn .container .bcb .conBoxes1 .signInSection .card-body .inCardBody .formBox .username {
+.signIn .container .box .conBoxes1 .signInSection .card-body .inCardBody .formBox .inputs {
   display: flex;
   flex-direction: column;
   align-items: start;
+  width: 100%;
 }
-.signIn .container .bcb .conBoxes1 .signInSection .card-body .inCardBody .formBox .username .conInput {
+.signIn .container .box .conBoxes1 .signInSection .card-body .inCardBody .formBox .inputs .form-label {
+  margin-bottom: 2px !important;
+}
+.signIn .container .box .conBoxes1 .signInSection .card-body .inCardBody .formBox .inputs .conInput {
   display: flex;
   flex-direction: row;
   width: 100%;
   border: 1px solid #E6EBF4;
   border-radius: 5px;
 }
-.signIn .container .bcb .conBoxes1 .signInSection .card-body .inCardBody .formBox .username .conInput .conLogo {
+.signIn .container .box .conBoxes1 .signInSection .card-body .inCardBody .formBox .inputs .conInput .conLogo {
   border: 1px solid #E6EBF4;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -77,33 +89,37 @@ a {
   align-items: center;
   padding: 10px;
 }
-.signIn .container .bcb .conBoxes1 .signInSection .card-body .inCardBody .formBox .username .conInput .input-with-margin-left {
+.signIn .container .box .conBoxes1 .signInSection .card-body .inCardBody .formBox .inputs .conInput .input-with-margin-left {
   padding-left: 20px;
   outline: none;
   width: 100%;
 }
-.signIn .container .bcb .conBoxes1 .signInSection .card-body .inCardBody .formBox .inputs {
+.signIn .container .box .conBoxes1 .signInSection .card-body .inCardBody .formBox .inputs .conInput .notificationBox {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #4df37f;
 }
-.signIn .container .bcb .conBoxes1 .signInSection .card-body .inCardBody .formBox .password {
+.signIn .container .box .conBoxes1 .signInSection .card-body .inCardBody .formBox .password {
   display: flex;
   flex-direction: column;
   align-items: start;
   position: relative;
 }
-.signIn .container .bcb .conBoxes1 .signInSection .card-body .inCardBody .formBox .password .passwordBox .forgetPassword {
+.signIn .container .box .conBoxes1 .signInSection .card-body .inCardBody .formBox .password .passwordBox .forgetPassword {
   position: absolute;
   right: 0;
   font-size: 13px;
 }
-.signIn .container .bcb .conBoxes1 .signInSection .card-body .inCardBody .formBox .password .conInput {
+.signIn .container .box .conBoxes1 .signInSection .card-body .inCardBody .formBox .password .conInput {
   display: flex;
   flex-direction: row;
   width: 100%;
   border: 1px solid #E6EBF4;
   border-radius: 5px;
 }
-.signIn .container .bcb .conBoxes1 .signInSection .card-body .inCardBody .formBox .password .conInput .conLogo {
+.signIn .container .box .conBoxes1 .signInSection .card-body .inCardBody .formBox .password .conInput .conLogo {
   border: 1px solid #E6EBF4;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -112,22 +128,32 @@ a {
   align-items: center;
   padding: 10px;
 }
-.signIn .container .bcb .conBoxes1 .signInSection .card-body .inCardBody .formBox .password .conInput .input-with-margin-left {
+.signIn .container .box .conBoxes1 .signInSection .card-body .inCardBody .formBox .password .conInput .input-with-margin-left {
   padding-left: 20px;
   outline: none;
   width: 100%;
 }
-.signIn .container .bcb .conBoxes1 .signInSection .card-body .inCardBody .formBox .checkBox {
+.signIn .container .box .conBoxes1 .signInSection .card-body .inCardBody .formBox .password .conInput .notificationBox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #4df37f;
+}
+.signIn .container .box .conBoxes1 .signInSection .card-body .inCardBody .formBox .checkBox {
   display: flex;
   flex-direction: row;
 }
-.signIn .container .bcb .conBoxes1 .signInSection .card-body .inCardBody .formBox .checkBox .form-check-label {
+.signIn .container .box .conBoxes1 .signInSection .card-body .inCardBody .formBox .checkBox .form-check-label {
   margin-left: 5px;
 }
-.signIn .container .bcb .conBoxes1 .signInSection .card-body .inCardBody .formBox .inputs {
+.signIn .container .box .conBoxes1 .signInSection .card-body .inCardBody .formBox .inputs {
   width: 100%;
 }
-.signIn .container .bcb .conBoxes1 .bottomPart p {
+.signIn .container .box .conBoxes1 .signInSection .card-body .inCardBody .formBox .buttonBox {
+  padding: 4px 0px !important;
+}
+.signIn .container .box .conBoxes1 .bottomPart p {
   margin: 10px;
 }
 
@@ -214,10 +240,10 @@ input {
   border: 1px solid #E6EBF4;
 }
 .signUp .container {
-  height: 100vh;
+  min-height: 100vh;
 }
 .signUp .container .box {
-  height: 100%;
+  min-height: 100vh;
 }
 .signUp .container .box .conBoxes {
   display: flex;
@@ -261,6 +287,13 @@ input {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.signUp .container .box .conBoxes .signInSection .card-body .inCardBody .formBox .termsOfUse {
+  padding: 4px 0px !important;
+}
+.signUp .container .box .conBoxes .signInSection .card-body .inCardBody .formBox .termsOfUse p {
+  margin: 0px !important;
+  font-size: 14px;
 }
 .signUp .container .box .conBoxes .signInSection .card-body .inCardBody .formBox .inputs {
   display: flex;

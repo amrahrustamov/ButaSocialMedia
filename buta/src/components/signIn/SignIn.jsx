@@ -10,7 +10,7 @@ const SignIn = () => {
   return (
     <div className="signIn">
         <div className="container">
-            <div className="bcb justify-content-center row">
+            <div className="box d-flex justify-content-center align-items-center row">
                 <div className="col-md-8 col-lg-6 col-xl-5 conBoxes1">
                     <div className="topPartContainer text-center">
                         <div className="topPart text-center p-2">
@@ -20,24 +20,24 @@ const SignIn = () => {
                         </div>
                     </div>
                     <div className="signInSection">
-                        <div className="p-4 card-body">
+                        <div className="px-3 card-body">
                             <div className="inCardBody">
                                 <form action="" className='formBox'>
-                                    <div className="mb-3 username inputs">
+                                <div className="mb-1 mt-2 inputs email">
                                         <label className='form-label'>Email</label>
-                                        <div className="mb-3 conInput">
+                                        <div className="mb-1 conInput">
                                             <div className="conLogo">
                                                 <MdOutlineMailLock className='userLogo'/>
                                             </div>
                                             <input type="text" name="email" id="email" placeholder='Enter email' className='input-with-margin-left'/>
                                         </div>
                                     </div>
-                                    <div className="mb-3 password inputs">
+                                    <div className="mb-1 password inputs">
                                         <div className="float-end passwordBox">
                                             <Link to={'/reset_password'} className='text-muted forgetPassword'>Forget password?</Link>
                                         </div>
                                         <label className='form-label'>Password</label>
-                                        <div className="mb-3 conInput">
+                                        <div className="mb-1 conInput">
                                             <div className="conLogo">
                                                 <PiLockKeyFill />
                                             </div>
@@ -45,7 +45,7 @@ const SignIn = () => {
                                         </div>
 
                                     </div>
-                                    <div className="mb-4 checkBox inputs">
+                                    <div className="mb-1 checkBox inputs">
                                         <input type="checkbox" id="remember-check" className='form-check-input'/>
                                         <label for="remember-check" className='form-check-label'>Remember me</label>
                                     </div>

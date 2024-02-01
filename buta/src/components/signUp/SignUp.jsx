@@ -82,7 +82,7 @@ const SignUp = () => {
         return (
             <div className="signUp">
         <div className="container">
-            <div className=" d-flex justify-content-center row box">
+            <div className=" d-flex justify-content-center align-items-center row box">
                 <div className="col-md-8 col-lg-6 col-xl-5 conBoxes">
                     <div className="topPartContainer">
                         <div className="topPart text-center">
@@ -169,7 +169,7 @@ const SignUp = () => {
                                          </div>
                                        )}
                                     </div>
-                                    <div className="TermsOfUse text-center">
+                                    <div className="termsOfUse text-center">
                                         <p>By registering you agree to the Buta <a href="/404">Terms of Use</a></p>
                                     </div>
                                 </form>

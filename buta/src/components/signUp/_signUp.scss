@@ -7,9 +7,9 @@
     }
 
     .container{
-        height: 100vh;
+        min-height: 100vh;
         .box{
-            height: 100%;
+            min-height: 100vh;
 
             .conBoxes{
                 display: flex;
@@ -55,6 +55,13 @@
                                 flex-direction: column;
                                 justify-content: center;
                                 align-items: center;
+                                .termsOfUse{
+                                    padding: 4px 0px!important;
+                                    p{
+                                        margin: 0px !important;
+                                        font-size: 14px;
+                                    }
+                                }
 
                                 .inputs{
                                     display: flex;
@@ -71,7 +78,6 @@
                                         width: 100%;
                                         border: 1px solid #E6EBF4;
                                         border-radius: 5px;
-
                                         .conLogo{
                                             border: 1px solid #E6EBF4;
                                             border-top-left-radius: 5px;
