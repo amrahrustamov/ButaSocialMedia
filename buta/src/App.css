@@ -450,6 +450,10 @@ header .containerHeader .rightPartOfHeader .containerOfRightPart div {
 header .containerHeader .rightPartOfHeader .containerOfRightPart div svg {
   font-size: 30px;
 }
+header .containerHeader .rightPartOfHeader .containerOfRightPart div .profile {
+  width: 45px !important;
+  height: 45px !important;
+}
 header .containerHeader .rightPartOfHeader .containerOfRightPart div img {
   width: 45px;
   height: 45px;
@@ -678,11 +682,9 @@ header .containerHeader .rightPartOfHeader .containerOfRightPart div img {
   justify-content: center;
 }
 
-.headerOfProfile {
-  margin-top: 60px;
-}
 .headerOfProfile .mainBox {
   width: 70%;
+  margin-top: 60px;
 }
 .headerOfProfile .mainBox .first {
   width: 100%;
@@ -778,4 +780,154 @@ header .containerHeader .rightPartOfHeader .containerOfRightPart div img {
   font-size: 50px;
   height: 150px;
   width: 150px;
+}
+
+.posts {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+.posts .postCards {
+  width: 33%;
+  margin-top: 50px;
+}
+.posts .postCards .listAndGridBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.posts .postCards .listAndGridBox a {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  margin-left: -30px;
+}
+.posts .postCards .listAndGridBox .list {
+  margin-right: 80px;
+}
+
+.postCard {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  padding: 5px;
+  margin-top: 20px;
+  background-color: white;
+}
+.postCard .topPostCard {
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+}
+.postCard .topPostCard .leftOfTopPost .img {
+  border: 1px solid rgba(0, 0, 0, 0.353);
+  height: 55px;
+  width: 55px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-left: 5px;
+}
+.postCard .topPostCard .leftOfTopPost .img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.postCard .topPostCard .leftOfTopPost .timeAndName .name p {
+  margin: 3px 0 0 15px;
+}
+.postCard .topPostCard .leftOfTopPost .timeAndName .name .follow {
+  color: #0764D1;
+  font-weight: bold;
+  margin: 3px 0 0 15px;
+}
+.postCard .topPostCard .leftOfTopPost .timeAndName .time span {
+  margin-left: 15px;
+  color: rgb(92, 90, 90);
+}
+.postCard .topPostCard .leftOfTopPost .timeAndName .time span svg {
+  margin-bottom: 5px;
+}
+.postCard .topPostCard .rightOfTopPost {
+  display: flex;
+  align-items: center;
+}
+.postCard .topPostCard .rightOfTopPost .icons {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 10px;
+}
+.postCard .topPostCard .rightOfTopPost .icons a {
+  margin-left: 15px;
+}
+.postCard .topPostCard .rightOfTopPost .icons a svg {
+  font-size: 30px;
+  color: rgb(90, 90, 90);
+}
+.postCard .post {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.175);
+  border-top: 1px solid rgba(0, 0, 0, 0.175);
+  margin: 10px 0;
+}
+.postCard .about {
+  padding: 10px;
+}
+.postCard .about .containerAbout p {
+  font-size: 15px;
+}
+.postCard .bottomPostCard .countOfActivites {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.postCard .bottomPostCard .countOfActivites .leftPart {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  margin: 0 0 0 10px;
+}
+.postCard .bottomPostCard .countOfActivites .leftPart svg {
+  color: #1186FD;
+}
+.postCard .bottomPostCard .countOfActivites .leftPart span {
+  margin-left: 3px;
+  color: #1186FD;
+}
+.postCard .bottomPostCard .countOfActivites .rightPart {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  margin: 0 10px 0 0;
+}
+.postCard .bottomPostCard .countOfActivites .rightPart svg {
+  color: #1186FD;
+  margin-right: 3px;
+}
+.postCard .bottomPostCard .countOfActivites .rightPart span {
+  color: #1186FD;
+}
+.postCard .bottomPostCard .buttons {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 50px;
+}
+.postCard .bottomPostCard .buttons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(95, 95, 95);
+}
+.postCard .bottomPostCard .buttons a svg {
+  font-size: 40px;
+  color: rgb(95, 95, 95);
+  margin: 0 5px;
 }/*# sourceMappingURL=App.css.map */

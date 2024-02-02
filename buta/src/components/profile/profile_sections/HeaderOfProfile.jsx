@@ -1,8 +1,13 @@
-import React from 'react'
-import '../../../../src/App.css'
-import { NavLink } from 'react-router-dom'
 
-const HeaderOfProfile = () => {
+import '../../../../src/App.css'
+import { Link, NavLink } from 'react-router-dom'
+
+const HeaderOfProfile = ({onLinkIdChange}) => {
+
+  const getIdHandle = (id) => {
+    onLinkIdChange(id);
+  };
+
   return (
     <div className='w-100 d-flex  justify-content-center headerOfProfile'>
         <div className="mainBox">
@@ -28,11 +33,11 @@ const HeaderOfProfile = () => {
 
             <div className='second'>
                 <div className="secondContainer">
-                    <NavLink>Posts</NavLink>
-                    <NavLink>Photos</NavLink>
-                    <NavLink className="add">Add</NavLink>
-                    <NavLink>Videos</NavLink>
-                    <NavLink>Friends</NavLink>
+                    <NavLink onClick={() => getIdHandle(1)} id='1'>Posts</NavLink>
+                    <NavLink  onClick={() => getIdHandle(2)} id='2'>Photos</NavLink>
+                    <Link id='add' className="add">Add</Link>
+                    <NavLink  onClick={() => getIdHandle(3)}  id='3'>Videos</NavLink>
+                    <NavLink onClick={() => getIdHandle(4)}  id='4'>Friends</NavLink>
                 </div>
             </div>
         </div>

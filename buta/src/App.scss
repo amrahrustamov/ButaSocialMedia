@@ -12,7 +12,9 @@
   @import './components/header/header';
   @import './pages/public/home/homepage';
   @import './components/addPost/addPost';
-  @import './components/postCard/postCards';
+  @import './components/postCard/friends/postCards';
   @import './components/leftSidebarHome/leftSideBarHome';
   @import './components/profile/profile';
   @import './components/profile/profile_sections/header0fProfile';
+  @import './components/profile/posts/posts';
+  @import './components/postCard/user/userPostCard';

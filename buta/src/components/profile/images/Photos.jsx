@@ -1,12 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import Header from '../../../components/header/Header'
-import AddPost from '../../../components/addPost/AddPost'
-import '../../../App.css'
-import PostCard from '../../../components/postCard/friends/PostCard'
-import LeftSideBar from '../../../components/leftSidebarHome/LeftSideBar'
-import axios from 'axios'
+import PostCard from '../../postCard/friends/PostCard'
+import axios from 'axios';
 
-const Homepage = () => {
+const Photos = () => {
   const [posts, setPosts] = useState();
 
   useEffect(() =>{
@@ -29,15 +25,8 @@ const Homepage = () => {
     console.log(posts);
     
   },[posts]);
-  
   return (
-    <div className='homepage'>
-      <Header />
-      <main>
-        <div className="leftPartOfHomePage"><LeftSideBar /></div>
-        <div className="middlePartOfHomePage">
-          <AddPost />
-            <div className="postCards">
+    <div className="postCards">
               {
                 posts && posts.map((item, index) => {
                   return (
@@ -45,13 +34,8 @@ const Homepage = () => {
                   )
                 })
               }
-              
-            
             </div>
-        </div>
-        <div className="rightPartOfHomePage">right part</div>
-      </main>
-    </div>
   )
 }
-export default Homepage
+
+export default Photos
