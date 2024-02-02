@@ -7,7 +7,6 @@ import { FcMindMap } from "react-icons/fc";
 import { Link } from 'react-router-dom';
 
 const SignIn = () => {
-
     const link = 'http://localhost:5247/api/Authentication/login';
 
     const [loginFailed, setLoginFailed] = useState(false)
@@ -17,9 +16,8 @@ const SignIn = () => {
         email:"",
         password: "",
     });
-    const [modelLoginUser, setModelLoginUser] = useState(loginUser)
+    const [modelLoginUser] = useState(loginUser)
     const postUser = async () => {
-        console.log(loginUser);
 
         const data = {
             email: loginUser.email,
@@ -36,10 +34,12 @@ const SignIn = () => {
         .then(response => {
             if (!response.ok) {
                 setLoginFailed(true);
-                setNotification("Register failed");
+                setNotification("Login failed");
                 throw new Error('Network response was not ok');
             }
             setLoginUser(modelLoginUser)
+            console.log(response);
+
             return response.json();
         })
         .then(data => {
@@ -100,18 +100,18 @@ const SignIn = () => {
                                     </div>
                                     <div className="mb-1 checkBox inputs">
                                         <input type="checkbox" id="remember-check" className='form-check-input' />
-                                        <label for="remember-check" className='form-check-label'>Remember me</label>
+                                        <label htmlFor="remember-check" className='form-check-label'>Remember me</label>
                                     </div>
                                     <div className="buttonBox inputs">
                                         <button type='submit' className='btn btn-primary d-block w-100' onClick={handleButtonClick}>Sign in</button>
-                                        {/* {loginFailed && (
+                                        {loginFailed && (
                                            
                                            <div className='mt-1 notification d-flex align-items-center justify-content-center w-100'>                
                                                 <div className='alert alert-warning text-center'> 
                                                 {notification}
                                               </div>
                                          </div>
-                                       )} */}
+                                       )}
                                     </div>
                                 </form>
                             </div>
