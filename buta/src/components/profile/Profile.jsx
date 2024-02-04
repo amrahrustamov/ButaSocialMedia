@@ -3,8 +3,6 @@ import '../../App.css'
 import HeaderOfProfile from './profile_sections/HeaderOfProfile'
 import Header from '../header/Header'
 import Post from './posts/Post'
-import Photos from './images/Photos'
-import Videos from './videos/Videos'
 import Friends from './friends/Friends'
 
 
@@ -14,7 +12,6 @@ const Profile = () => {
 
   const handleLinkIdChange = (id) => {
     setSelectedLinkId(id);
-    console.log(id);
   };
   return (
     <div className='profile d-flex row'>
@@ -24,13 +21,7 @@ const Profile = () => {
         selectedLinkId === 1 && <Post />
       }
       {
-        selectedLinkId === 2 && <Photos />
-      }
-      {
-        selectedLinkId === 3 && <Videos />
-      }
-      {
-        selectedLinkId === 4 && <Friends />
+        selectedLinkId === 2 && <Friends />
       }
     </div>
   )

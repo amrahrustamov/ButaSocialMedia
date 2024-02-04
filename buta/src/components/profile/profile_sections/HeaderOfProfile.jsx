@@ -1,12 +1,22 @@
 
 import '../../../../src/App.css'
 import { Link, NavLink } from 'react-router-dom'
+import AddPost from '../../addPost/AddPost';
+import { useState } from 'react';
 
 const HeaderOfProfile = ({onLinkIdChange}) => {
 
+const [response, setResponse] = useState("none");
+
   const getIdHandle = (id) => {
     onLinkIdChange(id);
-  };
+  }
+  const childValue = (value) => {
+    setResponse(value);
+  }
+  const addPost = () => {
+    setResponse(response === "none" ? "block" : "none");
+  }
 
   return (
     <div className='w-100 d-flex  justify-content-center headerOfProfile'>
@@ -34,10 +44,11 @@ const HeaderOfProfile = ({onLinkIdChange}) => {
             <div className='second'>
                 <div className="secondContainer">
                     <NavLink onClick={() => getIdHandle(1)} id='1'>Posts</NavLink>
-                    <NavLink  onClick={() => getIdHandle(2)} id='2'>Photos</NavLink>
-                    <Link id='add' className="add">Add</Link>
-                    <NavLink  onClick={() => getIdHandle(3)}  id='3'>Videos</NavLink>
-                    <NavLink onClick={() => getIdHandle(4)}  id='4'>Friends</NavLink>
+                    <Link onClick={addPost} id='3' className="add">Add</Link>
+                    <div className="sharePost" style={{ display: response}}>
+                        <AddPost sendValueToParent={childValue}/>
+                    </div>
+                    <NavLink onClick={() => getIdHandle(2)}  id='2'>Friends</NavLink>
                 </div>
             </div>
         </div>

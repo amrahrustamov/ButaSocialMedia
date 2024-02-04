@@ -483,7 +483,6 @@ header .containerHeader .rightPartOfHeader .containerOfRightPart div img {
 }
 
 .addPost {
-  background-color: white;
   border-radius: 20px;
   height: 90px;
   width: 100%;
@@ -498,32 +497,81 @@ header .containerHeader .rightPartOfHeader .containerOfRightPart div img {
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
-.addPost .containerAddPost .topPartOfAddPost .profileImg {
+.addPost .containerAddPost .topPartOfAddPost .imgAndName {
+  position: relative;
+}
+.addPost .containerAddPost .topPartOfAddPost .imgAndName .profileImg {
   border: 1px solid rgba(0, 0, 0, 0.353);
   height: 55px;
   width: 55px;
   border-radius: 50%;
   overflow: hidden;
 }
-.addPost .containerAddPost .topPartOfAddPost .profileImg img {
+.addPost .containerAddPost .topPartOfAddPost .imgAndName .profileImg img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
+.addPost .containerAddPost .topPartOfAddPost .imgAndName .userName {
+  margin-left: 15px;
+}
+.addPost .containerAddPost .topPartOfAddPost .imgAndName .buttonClose {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  border: none;
+  border-radius: 50%;
+  background-color: #0B66F9;
+}
+.addPost .containerAddPost .topPartOfAddPost .imgAndName .buttonClose svg {
+  font-size: 30px;
+  color: white;
+}
+.addPost .containerAddPost .topPartOfAddPost .imgAndName .buttonClose:hover {
+  background-color: rgba(11, 102, 249, 0.8784313725);
+}
 .addPost .containerAddPost .topPartOfAddPost .input {
   height: 50px;
-  width: 90%;
-  display: flex;
-  padding-left: 20px;
-}
-.addPost .containerAddPost .topPartOfAddPost .input input {
   width: 100%;
-  height: 100%;
-  border-radius: 50px;
+  display: flex;
+}
+.addPost .containerAddPost .topPartOfAddPost .input .text {
+  width: 100%;
+  min-height: 300px;
+  border-radius: 5px;
   padding-left: 30px;
   outline: none;
+  padding-top: 10px;
+  border: none;
+}
+.addPost .containerAddPost .topPartOfAddPost .input .hiddenInput {
+  display: none;
+}
+.addPost .containerAddPost .topPartOfAddPost .input .fileInputWrapper {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.addPost .containerAddPost .topPartOfAddPost .input .fileInputWrapper svg {
+  font-size: 50px;
+}
+.addPost .containerAddPost .topPartOfAddPost .input .fileInputWrapper span {
+  font-size: 25px;
+  margin-left: 10px;
+}
+.addPost .containerAddPost .topPartOfAddPost .input button {
+  width: 100px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  background-color: #0B66F9;
+  color: white;
+}
+.addPost .containerAddPost .topPartOfAddPost .input button:hover {
+  background-color: #2a7afc;
 }
 
 .postCard {
@@ -758,6 +806,15 @@ header .containerHeader .rightPartOfHeader .containerOfRightPart div img {
   justify-content: space-around;
   align-items: center;
   border-radius: 20px;
+  position: relative;
+}
+.headerOfProfile .mainBox .second .secondContainer .sharePost {
+  position: absolute;
+  border: 2px solid rgb(161, 189, 245);
+  border-radius: 5px;
+  min-height: 500px;
+  width: 60%;
+  background-color: rgb(226, 224, 224);
 }
 .headerOfProfile .mainBox .second .secondContainer a {
   font-size: 40px;

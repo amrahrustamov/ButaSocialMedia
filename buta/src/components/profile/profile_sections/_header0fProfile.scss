@@ -83,6 +83,15 @@
                 justify-content: space-around;
                 align-items: center;
                 border-radius: 20px;
+                position: relative;
+                .sharePost{
+                    position: absolute;
+                    border: 2px solid rgb(161, 189, 245);
+                    border-radius: 5px;
+                    min-height: 500px;
+                    width: 60%;
+                    background-color: rgb(226, 224, 224);
+                }
 
                 a{
                     font-size: 40px;
