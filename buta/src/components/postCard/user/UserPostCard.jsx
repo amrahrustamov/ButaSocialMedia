@@ -2,12 +2,12 @@ import React, { useEffect } from 'react'
 import '../../../App.css'
 import { Link } from 'react-router-dom';
 import { IoEarthSharp } from "react-icons/io5";
-import { IoMdClose } from "react-icons/io";
 import { SlOptions } from "react-icons/sl";
 import { AiOutlineLike } from "react-icons/ai";
 import { FaRegComment } from "react-icons/fa";
 import { PiShareFat } from "react-icons/pi";
 import { HiOutlineClipboardList } from "react-icons/hi";
+import Comment from '../../addComment/Comment';
 
 const UserPostCard = (props) => {
   const { name , picture} = props.item;
@@ -63,8 +63,8 @@ const UserPostCard = (props) => {
               <Link><PiShareFat /></Link>
               <Link><HiOutlineClipboardList /></Link>
           </div>
-
         </div>
+        <Comment />
     </div>
   )
 }

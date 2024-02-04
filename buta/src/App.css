@@ -976,6 +976,7 @@ header .containerHeader .rightPartOfHeader .containerOfRightPart div img {
   display: flex;
   justify-content: space-around;
   padding: 10px 50px;
+  border-bottom: 1px solid grey;
 }
 .postCard .bottomPostCard .buttons a {
   display: flex;
@@ -987,4 +988,64 @@ header .containerHeader .rightPartOfHeader .containerOfRightPart div img {
   font-size: 40px;
   color: rgb(95, 95, 95);
   margin: 0 5px;
+}
+
+.commentContainer {
+  width: 100%;
+  min-height: 50px;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+.commentContainer .comments {
+  display: flex;
+  flex-direction: row;
+  width: 100% !important;
+  height: auto;
+  align-items: center;
+  position: relative;
+}
+.commentContainer .comments .userImg {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(0, 0, 0, 0.384);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.commentContainer .comments .userAndComment {
+  border-radius: 10px;
+  background-color: #EFF2F5;
+  width: auto;
+  margin: 5px 0 5px 20px;
+  display: flex;
+  flex-direction: row;
+}
+.commentContainer .comments .userAndComment .user {
+  width: 100%;
+  font-weight: bold;
+  cursor: pointer;
+}
+.commentContainer .comments .userAndComment .comment {
+  width: auto;
+}
+.commentContainer .comments .settings {
+  width: 5%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+.commentContainer .comments .settings svg {
+  color: grey;
+}
+.commentContainer .time {
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+.commentsContainer {
+  width: 100%;
+  min-height: 200px;
+  border: 1px solid black;
 }/*# sourceMappingURL=App.css.map */
