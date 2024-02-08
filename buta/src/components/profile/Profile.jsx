@@ -8,12 +8,14 @@ import Friends from './friends/Friends'
 
 const Profile = () => {
 
+
   const [selectedLinkId, setSelectedLinkId] = useState(null);
 
   const handleLinkIdChange = (id) => {
     setSelectedLinkId(id);
   };
   return (
+    localStorage.getItem('userEmail') === null  ? (window.location.href='/') : 
     <div className='profile d-flex row'>
       <Header />
       <HeaderOfProfile onLinkIdChange={handleLinkIdChange}/>

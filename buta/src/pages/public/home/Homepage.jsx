@@ -54,12 +54,12 @@ const Homepage = () => {
   // },[posts]);
   
   return (
+    localStorage.getItem('userEmail') === null  ? (window.location.href='/') : 
     <div className='homepage'>
       <Header/>
       <main>
-        <div className="leftPartOfHomePage"><LeftSideBar /></div>
+        <div className="leftPartOfHomePage"></div>
         <div className="middlePartOfHomePage">
-          <AddPost />
             <div className="postCards">
               {
                 posts && posts.map((item, index) => {
@@ -68,7 +68,6 @@ const Homepage = () => {
                   )
                 })
               }
-              
             
             </div>
         </div>

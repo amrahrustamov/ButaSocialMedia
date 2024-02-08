@@ -1,15 +1,13 @@
 import '../../../src/App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import { MdOutlineMailLock } from "react-icons/md";
 import { PiLockKeyFill } from "react-icons/pi";
 import { FcMindMap } from "react-icons/fc";
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import { UserContext } from '../../context/UserProvider';
 
 const SignIn = () => {
-    const userData = useContext(UserContext);
     const navigate = useNavigate();
     const link = 'http://localhost:5247/api/Authentication/login';
 
@@ -49,8 +47,8 @@ const SignIn = () => {
         })
         .then(data => {
             console.log(data);
-            userData.changeUser(loginUser.email);
-            navigate(userData.user !== null ? '/home' : '/');
+            localStorage.setItem('userEmail', loginUser.email);
+            navigate('/home');
         })
         .catch((error) => {
             console.error('Error:', error);
@@ -68,7 +66,7 @@ const SignIn = () => {
             postUser();
         };
   return (
-    userData.user !== null  ? (window.location.href='/home') : 
+    localStorage.getItem('userEmail') !== null  ? (window.location.href='/home') : 
     <div className="signIn">
         <div className="container">
             <div className="box d-flex justify-content-center align-items-center row">

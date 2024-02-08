@@ -82,7 +82,7 @@ header{
                         font-size: 30px;
                     }
                     .active{
-                        border-bottom: 2px solid black;
+                        border-bottom: 2px solid #4788f1;
                     }
                 }
                 #friendsStory:hover{
@@ -97,6 +97,7 @@ header{
             }
         }
         .rightPartOfHeader{
+            position: relative;
 
             .containerOfRightPart{
                 display: flex;
