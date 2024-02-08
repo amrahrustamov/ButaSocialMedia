@@ -5,11 +5,13 @@ import SignUp from './components/signUp/SignUp';
 import ResetPassword from './components/resetPassword/ResetPassword';
 import Homepage from './pages/public/home/Homepage';
 import Profile from './components/profile/Profile'
+import { UserProvider } from './context/UserProvider';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter >
+        <UserProvider>
           <Routes>
             <Route path='/' element={<SignIn />}></Route>
             <Route path='/home' element={<Homepage />}></Route>
@@ -18,6 +20,7 @@ function App() {
             <Route path='/profile' element={<Profile />}></Route>
             <Route path='/reset_Password' element={<ResetPassword />}></Route>
           </Routes>
+        </UserProvider>
       </BrowserRouter>
     </div>
   );
