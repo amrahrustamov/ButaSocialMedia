@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import '../../App.css'
 import { FcMindMap } from 'react-icons/fc'
 import { CiSearch } from 'react-icons/ci'
@@ -10,6 +10,7 @@ import { BiSolidMessageDetail } from "react-icons/bi";
 import { IoMdNotifications } from "react-icons/io";
 
 const Header = () => {
+
   return (
     <header>
       <div className="containerHeader">

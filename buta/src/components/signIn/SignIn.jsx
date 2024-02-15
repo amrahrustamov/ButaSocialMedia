@@ -1,12 +1,14 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import '../../../src/App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { MdOutlineMailLock } from "react-icons/md";
 import { PiLockKeyFill } from "react-icons/pi";
 import { FcMindMap } from "react-icons/fc";
 import { Link, useNavigate } from 'react-router-dom';
+import { UserContext } from '../../context/UserProvider';
 
 const SignIn = () => {
+    const userData = useContext(UserContext)
     const navigate = useNavigate();
     const link = 'http://localhost:5065/Authentication/auth/login';
 
@@ -39,8 +41,12 @@ const SignIn = () => {
                 throw new Error('Network response was not ok');
             }
             setLoginFailed(false);
-            setLoginUser(modelLoginUser)
-            localStorage.setItem('userEmail', loginUser.email);
+            setLoginUser(modelLoginUser);
+            const user = {
+                userEmail: loginUser.email,
+                userPassword: loginUser.password
+              };
+              localStorage.setItem('user', JSON.stringify(user));
             navigate('/home');
         })
         .catch((error) => {

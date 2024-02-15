@@ -26,7 +26,7 @@ const PostCard = (props) => {
         <div className="topPostCard d-flex">
               <div className="leftOfTopPost d-flex">
                 <div className="img">
-                {props.item && props.item.Image && <img src={props.item.Image} alt="Post Image" />}
+                {props.item && props.item.Image && <img src={props.item.Image} alt="PostImage" />}
                 </div>
                 <div className="timeAndName">
                   <div className="name d-flex">
@@ -49,7 +49,7 @@ const PostCard = (props) => {
         </div>
         <div className="post">
           <div className="imgContainer">
-          {props.item && props.item.Image && <img src={props.item.Image} alt="Post Image" />}
+          {props.item && props.item.Image && <img src={props.item.Image} alt="PostImage" />}
           </div>
         </div>
         <div className="about">

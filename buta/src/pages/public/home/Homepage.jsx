@@ -5,6 +5,10 @@ import '../../../App.css'
 import PostCard from '../../../components/postCard/PostCard'
 
 const Homepage = () => {
+
+  const storedUser = localStorage.getItem('user');
+  const user = JSON.parse(storedUser);
+
   const [posts, setPosts] = useState([]);
 
 useEffect(() => {
@@ -25,7 +29,7 @@ useEffect(() => {
 }, []);
 
   return (
-    localStorage.getItem('userEmail') === null  ? (window.location.href='/') : 
+    user === null  ? (window.location.href='/') : 
     <div className='homepage'>
       <Header />
       <main>
