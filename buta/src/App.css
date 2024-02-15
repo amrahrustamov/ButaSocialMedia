@@ -555,6 +555,7 @@ header .containerHeader .rightPartOfHeader .containerOfRightPart div img {
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-top: 50px;
 }
 .postCard .about .containerAbout .tags p {
   margin: 5px 0px 0px 5px;
