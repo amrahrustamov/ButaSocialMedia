@@ -1,12 +1,69 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../../../src/App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { MdOutlineMailLock } from "react-icons/md";
 import { PiLockKeyFill } from "react-icons/pi";
 import { FcMindMap } from "react-icons/fc";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const SignIn = () => {
+    const navigate = useNavigate();
+    const link = 'http://localhost:5247/api/Authentication/login';
+
+    const [loginFailed, setLoginFailed] = useState(false)
+    const [notification, setNotification] = useState()
+
+    const [loginUser, setLoginUser] = useState({
+        email:"",
+        password: "",
+    });
+    const [modelLoginUser] = useState(loginUser)
+    const postUser = async () => {
+
+        const data = {
+            email: loginUser.email,
+            password: loginUser.password,
+        };
+
+        fetch(link, {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json',
+        },
+            body: JSON.stringify(data),
+        })
+        .then(response => {
+            if (!response.ok) {
+                setLoginFailed(true);
+                setNotification("Login failed");
+                throw new Error('Network response was not ok');
+            }
+            setLoginFailed(false);
+            setLoginUser(modelLoginUser)
+            console.log(response);
+
+            return response.json();
+        })
+        .then(data => {
+            console.log(data);
+            localStorage.setItem('userEmail', loginUser.email);
+            navigate('/home');
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    };
+        const handleOnChange = (event) => {
+            setLoginFailed(false);
+            setLoginUser({
+                ...loginUser,
+                [event.target.name]: event.target.value
+            });
+        };
+        const handleButtonClick = (event) => {
+            event.preventDefault();
+            postUser();
+        };
   return (
     <div className="signIn">
         <div className="container">
