@@ -1,0 +1,122 @@
+
+.headerOfProfile{
+
+    .mainBox{
+        width: 70%;
+        margin-top: 60px;
+        .first{
+            width: 100%;
+            border-bottom: 2px solid rgb(141, 135, 135);
+            padding: 10px 0;
+
+            .userPhotoAndName{
+                margin: 0 !important;
+                width: 40%;
+
+                .imageBox{
+                    width: 100%;
+
+                    img{
+                        width: 280px;
+                        height: 280px;
+                        border-radius: 50%;
+                        border: 5px solid rgb(141, 135, 135);
+                    }
+                } 
+                .name{
+                    font-size: 40px;
+                    width: 100%;
+                    height: 100px;
+                }                     
+            }
+            .userInfo{
+                width: 60%;
+                height: 100%;
+                margin: 2px !important;
+
+                .shortInfo{
+                    background-color: rgba(0, 0, 0, 0.048);
+                    border: 2px solid rgb(141, 135, 135);;
+                    border-radius: 8px;
+                    padding: 100px 0px 100px 20px;
+                    display: flex;
+                    flex-direction: column;
+                    position: relative;
+                    width: 80%;
+                    
+                    p{
+                        font-size: 20px;
+
+                        span{
+                            font-size: 25px;
+                        }
+                    }
+                    button{
+                        background-color: #a5a5a785;
+                        border: 0;
+                        border-radius: 5px;
+                        padding: 3px;
+                        position: absolute;
+                        right: 20px;
+                        bottom: 20px;
+                    }
+                    button:hover{
+                        background-color: #a5a5a7c4;
+
+                    }
+                }
+            }
+        }
+        .second{
+            width: 100%;
+            height: 150px;
+            padding: 20px;
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+
+            .secondContainer{
+                width: 90%;
+                height: 100%;
+                border: 1px solid rgba(0, 0, 0, 0.329);
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                border-radius: 20px;
+                position: relative;
+                .sharePost{
+                    position: absolute;
+                    border: 2px solid rgb(161, 189, 245);
+                    border-radius: 5px;
+                    min-height: 500px;
+                    width: 60%;
+                    background-color: rgb(226, 224, 224);
+                }
+
+                a{
+                    font-size: 40px;
+                    height: 60px;
+                    display:inline-flex;
+                    text-align: center;
+                    color: rgba(0, 0, 0, 0.452);
+                }
+                .active{
+                    border-bottom: 2px solid rgba(0, 0, 0, 0.452);
+                }
+                .add{
+                    background-color: rgb(27, 89, 213);
+                    border: 10px solid #a5a5a785;
+                    color: white;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 50px;
+                    height: 150px;
+                    width: 150px;
+                }
+            }
+        }
+    }
+}
+
