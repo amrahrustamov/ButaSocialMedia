@@ -86,7 +86,7 @@ const SignIn = () => {
                                             <div className="conLogo">
                                                 <MdOutlineMailLock className='userLogo'/>
                                             </div>
-                                            <input type="text" name="email" id="email" placeholder='Enter email' className='input-with-margin-left'/>
+                                            <input onChange={handleOnChange} type="text" name="email" id="email" placeholder='Enter email' className='input-with-margin-left'/>
                                         </div>
                                     </div>
                                     <div className="mb-3 password inputs">
@@ -98,7 +98,7 @@ const SignIn = () => {
                                             <div className="conLogo">
                                                 <PiLockKeyFill />
                                             </div>
-                                            <input type="password" name="password" id="password" placeholder='Enter password' className='input-with-margin-left'/>
+                                            <input onChange={handleOnChange} type="password" name="password" id="password" placeholder='Enter password' className='input-with-margin-left'/>
                                         </div>
 
                                     </div>
@@ -107,7 +107,7 @@ const SignIn = () => {
                                         <label for="remember-check" className='form-check-label'>Remember me</label>
                                     </div>
                                     <div className="buttonBox inputs">
-                                        <button type='submit' className='btn btn-primary d-block w-100'>Sign in</button>
+                                        <button onClick={handleButtonClick} type='submit' className='btn btn-primary d-block w-100'>Sign in</button>
                                     </div>
                                 </form>
                             </div>
