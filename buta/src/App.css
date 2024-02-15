@@ -406,6 +406,7 @@ header .containerHeader .rightPartOfHeader .containerOfRightPart div img {
 .homepage {
   background-color: #F7F7FF;
   width: 100%;
+  margin-top: 60px;
 }
 .homepage main {
   display: flex;

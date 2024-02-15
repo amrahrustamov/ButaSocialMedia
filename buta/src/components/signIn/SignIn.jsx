@@ -8,7 +8,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const SignIn = () => {
     const navigate = useNavigate();
-    const link = 'http://localhost:5247/api/Authentication/login';
+    const link = 'http://localhost:5065/Authentication/auth/login';
 
     const [loginFailed, setLoginFailed] = useState(false)
     const [notification, setNotification] = useState()
@@ -40,12 +40,6 @@ const SignIn = () => {
             }
             setLoginFailed(false);
             setLoginUser(modelLoginUser)
-            console.log(response);
-
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
             localStorage.setItem('userEmail', loginUser.email);
             navigate('/home');
         })
@@ -104,10 +98,18 @@ const SignIn = () => {
                                     </div>
                                     <div className="mb-4 checkBox inputs">
                                         <input type="checkbox" id="remember-check" className='form-check-input'/>
-                                        <label for="remember-check" className='form-check-label'>Remember me</label>
+                                        <label htmlFor="remember-check" className='form-check-label'>Remember me</label>
                                     </div>
                                     <div className="buttonBox inputs">
                                         <button onClick={handleButtonClick} type='submit' className='btn btn-primary d-block w-100'>Sign in</button>
+                                        {loginFailed && (
+                                           
+                                           <div className='mt-1 notification d-flex align-items-center justify-content-center w-100'>                
+                                                <div className='alert alert-warning text-center'> 
+                                                {notification}
+                                              </div>
+                                         </div>
+                                       )}
                                     </div>
                                 </form>
                             </div>
