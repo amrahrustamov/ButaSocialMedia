@@ -3,40 +3,39 @@ import Header from '../../../components/header/Header'
 import AddPost from '../../../components/addPost/AddPost'
 import '../../../App.css'
 import PostCard from '../../../components/postCard/PostCard'
-import axios from 'axios'
 
 const Homepage = () => {
-  const [posts, setPosts] = useState();
+  const [posts, setPosts] = useState([]);
 
-  useEffect(() =>{
-    const getPosts = async () => {
-        await axios.get('https://randomuser.me/api/?results=50')
-        .then(response => setPosts(response.data.results))
-        .catch(err => console.log(err))
-    }
-    try{
-      if(!posts){
-        getPosts();
-        console.log('beli');
+useEffect(() => {
+  const getPosts = async () => {
+    try {
+      const response = await fetch('http://localhost:5065/home/all_blogs');
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
       }
+      const data = await response.json();
+      setPosts(data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
     }
-      catch{
+  };
 
-      }
-    
-  },[posts]);
+  getPosts();
+}, []);
+
   return (
+    localStorage.getItem('userEmail') === null  ? (window.location.href='/') : 
     <div className='homepage'>
       <Header />
       <main>
-        <div className="leftPartOfHomePage">left part</div>
         <div className="middlePartOfHomePage">
           <AddPost />
             <div className="postCards">
               {
-                posts && posts.map((item, index) => {
+                posts && posts.map((item, id)=> {
                   return (
-                    <PostCard key={index} item={item}/>
+                    <PostCard key={id} item={item}/>
                   )
                 })
               }
@@ -44,7 +43,6 @@ const Homepage = () => {
             
             </div>
         </div>
-        <div className="rightPartOfHomePage">right part</div>
       </main>
     </div>
   )

@@ -86,6 +86,28 @@
         .containerAbout{
             p{
                 font-size: 15px;
+
+            }
+            .content{
+                height: auto;
+                p{
+                    margin:5px 0px 0px 5px;
+                }
+            }
+            .tags{
+                height: auto;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                p{
+                    margin:5px 0px 0px 5px;
+                    display: inline-flex;
+                    border: 1px solid rgb(185, 182, 182);
+                    border-radius: 5px;
+                    padding: 3px;
+                    color: white;
+                    background-color: #1186FD;
+                }
             }
         }
     }
