@@ -35,8 +35,8 @@ const AddPost = ({sendValueToParent}) => {
                   <span>Choose File</span>
                 </label>
               <textarea className='text mb-2' type="text" placeholder='Add a text'/>
-              <input placeholder='Add location' type='text' id="locationInput" className='locationInput' onChange={handleFileChange}/>
-              <input placeholder='Add tags : #Blog' type='text' id="tagsInput" className='tagsInput' onChange={handleFileChange}/>
+              <input placeholder='Add location' type='text' id="locationInput" className='locationInput'/>
+              <input placeholder='Add tags : #Blog' type='text' id="tagsInput" className='tagsInput' />
               <button>Share</button>
             </div>
       </div>

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import Header from '../../../components/header/Header'
-import AddPost from '../../../components/addPost/AddPost'
 import '../../../App.css'
 import PostCard from '../../../components/postCard/PostCard'
 
