@@ -1,5 +1,5 @@
 
-import '../../../../src/App.css'
+import '../../../App.css'
 import { Link, NavLink } from 'react-router-dom'
 import AddPost from '../../addPost/AddPost';
 import { useState } from 'react';
@@ -45,12 +45,10 @@ const [response, setResponse] = useState("none");
                 <div className="secondContainer">
                     <NavLink onClick={() => getIdHandle(1)} id='1'>Posts</NavLink>
                     <Link onClick={addPost} id='3' className="add">Add</Link>
-                    <div className="sharePost" style={{ display: response}}>
-                        {/* <AddPost sendValueToParent={childValue}/> */}
-                    </div>
                     <NavLink onClick={() => getIdHandle(2)}  id='2'>Friends</NavLink>
                 </div>
             </div>
+            <AddPost sendValueToParent={childValue} style={{ display: response}}/>
         </div>
     </div>
   )

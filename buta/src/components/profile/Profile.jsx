@@ -15,7 +15,7 @@ const Profile = () => {
     setSelectedLinkId(id);
   };
   return (
-    // localStorage.getItem('userEmail') === null  ? (window.location.href='/') : 
+    localStorage.getItem('user') === null  ? (window.location.href='/') : 
     <div className='profile d-flex row'>
       <Header />
       <HeaderOfProfile onLinkIdChange={handleLinkIdChange}/>

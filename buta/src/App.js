@@ -5,6 +5,7 @@ import SignUp from './components/signUp/SignUp';
 import ResetPassword from './components/resetPassword/ResetPassword';
 import Homepage from './pages/public/home/Homepage';
 import { UserProvider } from './context/UserProvider';
+import Profile from './components/profile/Profile';
 
 function App() {
  
@@ -17,6 +18,7 @@ function App() {
             <Route path='/home' element={<Homepage />}/>
             <Route path='/sign_in' element={<SignIn />} />
             <Route path='/sign_up' element={<SignUp />} />
+            <Route path='/profile' element={<Profile />} />
             <Route path='/reset_Password' element={<ResetPassword />} />
           </Routes>
         </UserProvider>
