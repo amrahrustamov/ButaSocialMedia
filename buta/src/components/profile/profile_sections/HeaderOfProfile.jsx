@@ -6,16 +6,8 @@ import { useState } from 'react';
 
 const HeaderOfProfile = ({onLinkIdChange}) => {
 
-const [response, setResponse] = useState("none");
-
   const getIdHandle = (id) => {
     onLinkIdChange(id);
-  }
-  const childValue = (value) => {
-    setResponse(value);
-  }
-  const addPost = () => {
-    setResponse(response === "none" ? "block" : "none");
   }
 
   return (
@@ -44,11 +36,9 @@ const [response, setResponse] = useState("none");
             <div className='second'>
                 <div className="secondContainer">
                     <NavLink onClick={() => getIdHandle(1)} id='1'>Posts</NavLink>
-                    <Link onClick={addPost} id='3' className="add">Add</Link>
                     <NavLink onClick={() => getIdHandle(2)}  id='2'>Friends</NavLink>
                 </div>
             </div>
-            <AddPost sendValueToParent={childValue} style={{ display: response}}/>
         </div>
     </div>
   )

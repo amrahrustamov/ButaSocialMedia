@@ -1,20 +1,46 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../../App.css'
-import { FcGallery } from "react-icons/fc";
+import { FcAddImage } from "react-icons/fc";
+import { IoMdClose } from "react-icons/io";
+import { Link } from 'react-router-dom';
 
-const AddPost = () => {
+const AddPost = ({sendValueToParent}) => {
+
+  const [response, setResponse] = useState(true);
+  const addPost = () => {
+    setResponse(response === true ? false : true);
+  }
+
+  const handleFileChange = (e) => {
+    const selectedFile = e.target.files[0];
+    console.log(selectedFile);
+  };
+
+  const  close = () => {
+    const value = "none";
+    sendValueToParent(value);
+  }
   return (
-    <div className='addPost'>
-        <div className="containerAddPost">
-                <div className="topPartOfAddPost">
-                    <div className="profileImg">
-                            <img src="https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg" alt="profile" />
-                    </div>
-                    <div className="input">
-                        <input type="text" placeholder='Add story'/>
-                    </div>
-                </div>
-        </div>
+    <div className='post'>
+      <div className="addButton">
+          <Link onClick={addPost} className="add">Add Blog</Link>
+      </div>
+      {
+        response === true &&
+      <div className="addPost">
+            <div className="input d-flex row my-3">
+              <input  type="file" id="fileInput" className='hiddenInput d-none' onChange={handleFileChange}/>
+                <label htmlFor="fileInput" className="fileInputWrapper mb-2">
+                  <FcAddImage className="uploadIcon" />
+                  <span>Choose File</span>
+                </label>
+              <textarea className='text mb-2' type="text" placeholder='Add a text'/>
+              <input placeholder='Add location' type='text' id="locationInput" className='locationInput' onChange={handleFileChange}/>
+              <input placeholder='Add tags : #Blog' type='text' id="tagsInput" className='tagsInput' onChange={handleFileChange}/>
+              <button>Share</button>
+            </div>
+      </div>
+      }
     </div>
   )
 }

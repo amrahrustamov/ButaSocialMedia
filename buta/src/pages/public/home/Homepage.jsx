@@ -34,7 +34,6 @@ useEffect(() => {
       <Header />
       <main>
         <div className="middlePartOfHomePage">
-          <AddPost />
             <div className="postCards">
               {
                 posts && posts.map((item, id)=> {

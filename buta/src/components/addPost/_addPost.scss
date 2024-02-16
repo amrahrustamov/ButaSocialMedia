@@ -1,46 +1,58 @@
-.addPost{
-    background-color: white;
-    border-radius: 20px;
-    height: 90px;
-    width: 100%;
-
-    .containerAddPost{
-        width: 100%;
-        height: 100%;
-        padding: 15px;
-
-        .topPartOfAddPost{
-            height: 100%;
-            width: 100%;
+.post{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .addButton{
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        a{
+            margin-bottom: 5px;
+            width: 100px;
+            height: 40px;
+            border: 1px solid rgb(134, 133, 133);
             display: flex;
+            justify-content: center;
             align-items: center;
+            border-radius: 5px;
+            color: white;
+            background-color: rgb(29, 103, 199);
+        }
+        a:hover{
+            background-color: rgb(8, 71, 153);
+        }
+    }
 
-            .profileImg{
-                border: 1px solid rgba(0, 0, 0, 0.353);
-                height: 55px;
-                width: 55px;
-                border-radius: 50%;
-                overflow: hidden;
+    .addPost{
+        width: 50%;
+        border: 1px solid black;
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
 
-                img{
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                }
+        .input{
+            width: 90% !important;
+            margin: 0px;
+            display: flex;
+            justify-content: center;
+
+            svg{
+                margin-right: 5px;
+                font-size: 50px;
             }
-            .input{
-                height: 50px;
-                width: 90%;
-                display: flex;
-                padding-left:20px;
-
-                input{
-                    width: 100%;
-                    height: 100%;
-                    border-radius: 50px;
-                    padding-left: 30px;
-                    outline: none;
-                }
+            input{
+                margin-bottom: 5px;
+                height: 40px;
+            }
+            button{
+                width: 100px;
+                height: 40px;
+                border: 1px solid green;
+                border-radius: 5px;
+                background-color: greenyellow;
             }
         }
     }
