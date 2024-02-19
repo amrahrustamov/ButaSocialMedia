@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../../App.css'
 import { FcMindMap } from 'react-icons/fc'
 import { CiSearch } from 'react-icons/ci'
@@ -9,6 +9,7 @@ import { CgMenuGridO } from "react-icons/cg";
 import { BiSolidMessageDetail } from "react-icons/bi";
 import { IoMdNotifications } from "react-icons/io";
 import Exit from '../exit/Exit';
+import axios from 'axios';
 
 const Header = () => {
 
@@ -16,6 +17,24 @@ const Header = () => {
   const  handleClick = () => {
     setExit(!exit)
   }
+
+  const [user, setUser] = useState([]);
+
+  useEffect(() => {
+    const getPosts = async () => {
+      try {
+        const response = await axios.get('http://localhost:5065/profile/get_profile_image', {
+          withCredentials: true,
+        });
+        setUser(response.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    getPosts();
+  }, []);
+
   return (
     <header>
       <div className="containerHeader">
@@ -36,7 +55,7 @@ const Header = () => {
                 <div className='menu'><Link><CgMenuGridO /></Link></div>
                 <div className='messages'><Link><BiSolidMessageDetail /></Link></div>
                 <div className='notifications'><Link><IoMdNotifications /></Link></div>
-                <div className='profilePhoto'><Link onClick={handleClick}><img src="https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg" alt="logo" /></Link></div>
+                <div className='profilePhoto'><Link onClick={handleClick}><img src={user} alt="logo" /></Link></div>
               </div>
               <Exit exit={exit}/>
             </div>

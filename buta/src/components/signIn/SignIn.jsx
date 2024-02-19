@@ -1,37 +1,32 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import '../../../src/App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { MdOutlineMailLock } from "react-icons/md";
 import { PiLockKeyFill } from "react-icons/pi";
 import { FcMindMap } from "react-icons/fc";
 import { Link, useNavigate } from 'react-router-dom';
-import { UserContext } from '../../context/UserProvider';
 
 const SignIn = () => {
-    const userData = useContext(UserContext)
     const navigate = useNavigate();
     const link = 'http://localhost:5065/Authentication/auth/login';
-
-    const [loginFailed, setLoginFailed] = useState(false)
-    const [notification, setNotification] = useState()
-
+    const [loginFailed, setLoginFailed] = useState(false);
+    const [notification, setNotification] = useState();
     const [loginUser, setLoginUser] = useState({
         email:"",
         password: "",
     });
-    const [modelLoginUser] = useState(loginUser)
     const postUser = async () => {
-
         const data = {
             email: loginUser.email,
             password: loginUser.password,
         };
-
         fetch(link, {
             method: 'POST',
             headers: {
             'Content-Type': 'application/json',
+            'Cookie': 'cookieName=cookieValue',
         },
+        credentials: 'include',
             body: JSON.stringify(data),
         })
         .then(response => {
@@ -41,13 +36,13 @@ const SignIn = () => {
                 throw new Error('Network response was not ok');
             }
             setLoginFailed(false);
-            setLoginUser(modelLoginUser);
             const user = {
                 userEmail: loginUser.email,
                 userPassword: loginUser.password
               };
               localStorage.setItem('user', JSON.stringify(user));
-            navigate('/home');
+              console.log("oldu");
+              navigate('/')
         })
         .catch((error) => {
             console.error('Error:', error);

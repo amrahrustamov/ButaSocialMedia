@@ -6,6 +6,7 @@ import ResetPassword from './components/resetPassword/ResetPassword';
 import Homepage from './pages/public/home/Homepage';
 import { UserProvider } from './context/UserProvider';
 import Profile from './components/profile/Profile';
+import PrivateRoute from './components/PrivateRoute';
 
 function App() {
  
@@ -14,12 +15,12 @@ function App() {
       <BrowserRouter >
         <UserProvider>
           <Routes>
-            <Route path='/' element={<SignIn />} />
-            <Route path='/home' element={<Homepage />}/>
             <Route path='/sign_in' element={<SignIn />} />
             <Route path='/sign_up' element={<SignUp />} />
-            <Route path='/profile' element={<Profile />} />
             <Route path='/reset_Password' element={<ResetPassword />} />
+            <Route path='/home' element={<Homepage />} />
+            <Route path='/profile' element={<PrivateRoute element={<Profile />} />}/>
+            <Route path='/' element={<PrivateRoute element={<Homepage />} />}/>
           </Routes>
         </UserProvider>
       </BrowserRouter>

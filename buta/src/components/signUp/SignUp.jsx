@@ -24,7 +24,7 @@ const SignUp = () => {
         password: "",
         phonenumber: "",
     });
-    const [modelRegisterUser, setModelRegisterUser] = useState(registerUser)
+    const modelRegisterUser = registerUser;
     const postUser = async () => {
         console.log(registerUser);
 

@@ -1,23 +1,7 @@
-
-import { createContext, useState } from 'react';
 import '../../../App.css'
 import { NavLink } from 'react-router-dom'
 
 const HeaderOfProfile = ({onLinkIdChange}) => {
-
-    const [user, setuser] = useState();
-
-    const UserContext = createContext();
-    setuser(UserContext);
-
- fetch('http://localhost:5065/home/all_blogs', {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ key: user })
-  });
-  
 
   const getIdHandle = (id) => {
     onLinkIdChange(id);

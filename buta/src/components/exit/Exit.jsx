@@ -1,18 +1,26 @@
 import React from 'react';
 import '../../App.css';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const Exit = (props) => {
-    const handleExit = () => {
-        localStorage.removeItem('user');
-    }
+    const handleExit = async () => {
+      try {
+        await axios.post('http://localhost:5065/authentication/logout', null, {
+          withCredentials: true,
+        });
+        console.log('Logged out successfully');
+      } catch (error) {
+        console.error('Error logging out:', error);
+      }
+    };
 
   return (
     <div className='exitBox'style={{ display: props.exit !== true ? "none" : "flex" }}>
         <div className="exitContainer d-flex row align-items-center justify-content-center">
             <Link to={'/profile'} className='text-center'>Profile</Link>
             <Link className='text-center'>Settings</Link>
-            <Link onClick={handleExit} to={'/'} className='text-center'>Exit</Link>
+            <Link onClick={handleExit} className='text-center'>Exit</Link>
         </div>
         
     </div>
