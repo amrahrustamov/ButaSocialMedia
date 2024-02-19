@@ -3,6 +3,7 @@ import Header from '../../../components/header/Header'
 import '../../../App.css'
 import PostCard from '../../../components/postCard/PostCard'
 import axios from 'axios'
+import AddPost from '../../../components/addPost/AddPost'
 
 const Homepage = () => {
 
@@ -29,6 +30,8 @@ const Homepage = () => {
       <main>
         <div className="middlePartOfHomePage">
             <div className="postCards">
+            <AddPost />
+            
               {
                 posts && posts.map((item, id)=> {
                   return (
