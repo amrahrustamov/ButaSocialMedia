@@ -18,22 +18,30 @@ const Header = () => {
     setExit(!exit)
   }
 
-  const [user, setUser] = useState([]);
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     const getPosts = async () => {
       try {
         const response = await axios.get('http://localhost:5065/profile/get_profile_image', {
           withCredentials: true,
+          responseType: 'blob'
         });
-        setUser(response.data);
+
+        const reader = new FileReader();
+        reader.readAsDataURL(response.data);
+        reader.onloadend = () => {
+            const base64data = reader.result;
+            setUser(base64data);
+        };
       } catch (error) {
         console.error('Error fetching data:', error);
       }
     };
-
+    
     getPosts();
   }, []);
+  console.log(user);
 
   return (
     <header>

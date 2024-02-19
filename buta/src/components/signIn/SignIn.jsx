@@ -24,7 +24,6 @@ const SignIn = () => {
             method: 'POST',
             headers: {
             'Content-Type': 'application/json',
-            'Cookie': 'cookieName=cookieValue',
         },
         credentials: 'include',
             body: JSON.stringify(data),
