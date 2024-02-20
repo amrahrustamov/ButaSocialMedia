@@ -27,7 +27,7 @@
 
     .addPost{
         width: 100%;
-        border: 1px solid black;
+        background-color: white;
         border-radius: 15px;
         display: flex;
         justify-content: center;
@@ -39,14 +39,33 @@
             display: flex;
             justify-content: center;
 
+            .countFiles{
+                margin-left: 10px;
+                font-size: 12px;
+                color: red;
+            }
             svg{
                 margin-right: 5px;
                 font-size: 50px;
+            }
+            .text{
+                margin-top: 20px;
+                min-height: 200px;
+                border: none;
+                scrollbar-width:  none;
+                resize: none;
+                box-shadow: 1px 1px 10px 0.1px;
+                padding: 10px 20px;
+            }
+            .text:focus {
+                outline: none;            
             }
             input{
                 margin-bottom: 5px;
                 padding: 0 0 0 15px !important;
                 height: 40px;
+                border: none;
+                margin: 5px;
             }
             .shareButton{
                 width: 100px;
@@ -57,21 +76,26 @@
             }
             .tags{
                 padding: 0 !important;
+                
                 input{
                     width: 100%;
                     
                 }
                 .tagsBox{
                     display: flex;
+                    flex-wrap: wrap;
                     flex-direction: row;
                     margin-bottom: 10px;
+                    height: auto;
+                    
                     .tag{
                         display: flex;
                         align-items: center;
-                        background-color: #909192;
+                        background-color: #90919273;
                         border-radius: 10px;
-                        padding: 3px;
-                        margin-left: 5px;
+                        padding: 5px;
+                        margin: 5px 0 0 5px;
+                        
                         .tagButton{
                             width: 20px;
                             height: 20px;
@@ -80,13 +104,45 @@
                             justify-content: center;
                             align-items: center;
                             border: none;
-                            margin-left: 3px;
-                            background-color: #909192;
+                            margin-left: 5px;
+                            padding: 0;
+                            color: black;
                         }
                         .tagButton:hover{
-                            color: aliceblue;
+                            color: red;
                         }
                     }
+                }
+            }
+            .imageContainer{
+                display: flex;
+                flex-wrap: wrap;
+                gap: 5px;
+                .images{
+                    width: 100px;
+                    height: 150px;
+                    background-color: rgb(211, 209, 209);
+                    display: flex;
+                    align-items: center;
+                    border-radius: 3px;
+                    position: relative;
+                    img{
+                        width: 100%;
+                        object-fit: contain;
+                    }
+                    .imgButton{
+                        display: none;
+                        position: absolute;
+                        top: 5px;
+                        right: 1px;
+                        svg{
+                            font-size: 20px;
+                            color: red;
+                        }
+                    }
+                }
+                .images:hover .imgButton{
+                    display: flex;
                 }
             }
         }
