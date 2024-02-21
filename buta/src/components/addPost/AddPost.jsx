@@ -12,7 +12,7 @@ const AddPost = () => {
     file: null,
     text: "",
     location:"",
-    tags: "",
+    tags: null,
 });
 
   const [tags, setTags] = useState([]);

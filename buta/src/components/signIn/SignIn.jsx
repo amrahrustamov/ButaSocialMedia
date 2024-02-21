@@ -5,11 +5,13 @@ import { MdOutlineMailLock } from "react-icons/md";
 import { PiLockKeyFill } from "react-icons/pi";
 import { FcMindMap } from "react-icons/fc";
 import { Link, useNavigate } from 'react-router-dom';
+import { ClipLoader } from 'react-spinners';
 
 const SignIn = () => {
     const navigate = useNavigate();
     const link = 'http://localhost:5065/Authentication/auth/login';
     const [loginFailed, setLoginFailed] = useState(false);
+    const [buttonClick, setButtonClick] = useState(false);
     const [notification, setNotification] = useState();
     const [loginUser, setLoginUser] = useState({
         email:"",
@@ -35,13 +37,7 @@ const SignIn = () => {
                 throw new Error('Network response was not ok');
             }
             setLoginFailed(false);
-            const user = {
-                userEmail: loginUser.email,
-                userPassword: loginUser.password
-              };
-              localStorage.setItem('user', JSON.stringify(user));
-              console.log("oldu");
-              navigate('/')
+              navigate('/home');
         })
         .catch((error) => {
             console.error('Error:', error);
@@ -56,10 +52,15 @@ const SignIn = () => {
         };
         const handleButtonClick = (event) => {
             event.preventDefault();
+            setButtonClick(true);
             postUser();
+
         };
   return (
     <div className="signIn">
+        {buttonClick === true ? <div className='spinner'>
+        <ClipLoader color="#0764D1" cssOverride={{}} loading size={200} speedMultiplier={0.8} />
+        </div> : 
         <div className="container">
             <div className="bcb justify-content-center row">
                 <div className="col-md-8 col-lg-6 col-xl-5 conBoxes1">
@@ -123,7 +124,8 @@ const SignIn = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div>    
+        }    
     </div>
   )
 }
