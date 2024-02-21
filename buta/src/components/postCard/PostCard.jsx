@@ -11,22 +11,26 @@ import { HiOutlineClipboardList } from "react-icons/hi";
 import Comment from '../addComment/Comment';
 
 const PostCard = (props) => {
-
+console.log("amrahaaaa");
+console.log(props.item.Image);
+console.log("amrahaaaa");
   const targetDate = new Date(props.item.DateTime);
   const differenceInDays = Math.abs(Math.ceil((targetDate - Date.now()) / (1000 * 3600 * 24)));
-
   const [comment, setComment] = useState(false);
   const commentHandler = () => {
     setComment(!comment)
   }
 
+console.log("props");
+console.log(props.item.Owner);
+console.log("props");
 
   return (
     <div className='postCard'>
         <div className="topPostCard d-flex">
               <div className="leftOfTopPost d-flex">
                 <div className="img">
-                {props.item && props.item.Image && <img src={props.item.Image} alt="PostImage" />}
+                {props.item.Owner.ProfileImage && <img src={`http://localhost:5065/home/images/${props.item.Owner.ProfileImage}`}alt="PostImage" />}
                 </div>
                 <div className="timeAndName">
                   <div className="name d-flex">
@@ -49,7 +53,7 @@ const PostCard = (props) => {
         </div>
         <div className="post">
           <div className="imgContainer">
-          {props.item && props.item.Image && <img src={props.item.Image} alt="PostImage" />}
+          {props.item.Image && props.item.Image.map(img => <img src={`http://localhost:5065/home/images/${img}`}alt="PostImage" />)}
           </div>
         </div>
         <div className="about">

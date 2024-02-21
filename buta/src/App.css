@@ -517,11 +517,22 @@ header .containerHeader .rightPartOfHeader .containerOfRightPart div img {
   width: 100%;
   height: auto;
   display: flex;
-  align-items: center;
-  justify-content: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.175);
   border-top: 1px solid rgba(0, 0, 0, 0.175);
   margin: 10px 0;
+}
+.postCard .post .imgContainer {
+  width: 100px;
+  height: 150px;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: row;
+}
+.postCard .post .imgContainer img {
+  border: 1px solid yellow;
+  -o-object-fit: fill;
+     object-fit: fill;
+  width: 100%;
 }
 .postCard .about {
   padding: 10px;

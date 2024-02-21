@@ -35,15 +35,19 @@ const AddPost = () => {
     setImages(updatedImages);
     formData.delete('images[]', images[index]);
   };
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
+    formData.append('text', blog.text);
+    formData.append('location', blog.location);
+    formData.append('tags', tags);
 
     try {
       const response = await axios.post('http://localhost:5065/home/add_blog', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
+        withCredentials: true,
       });
 
       console.log(response.data);
@@ -81,9 +85,10 @@ const AddPost = () => {
         ...blog,
         [event.target.name]: event.target.value
     });
-};//stop
+};
+
   return (
-    <form onSubmit={handleSubmit} className='post'> 
+    <form onSubmit={handleSubmit } className='post' onKeyDown={(e) => { if (e.key === 'Enter') e.preventDefault(); }}> 
       <div className="addButton">
           <Link onClick={addPost} className="add">Add Blog</Link>
       </div>
@@ -112,7 +117,7 @@ const AddPost = () => {
             ))}
           </div>
           <textarea value={blog.text} onChange={handleOnChange} placeholder='Add content' name='text' type="text" id='text' className='text mb-2'/>
-          <input value={blog.location} onChange={handleOnChange} placeholder='Add location (examples: Country,City)' name='locationInput' type='text' id="locationInput" className='locationInput'/>
+          <input value={blog.location} onChange={handleOnChange} placeholder='Add location (examples: Country,City)' name='location' type='text' id="location" className='locationInput'/>
 
         <div className='tags'>
           <input className='tagInput' type="text" value={tagInput} onChange={handleTagChange} onKeyDown={handleInputKeyDown} placeholder="Add tag..."/>
