@@ -11,7 +11,7 @@ import { MdOutlinePhoneAndroid } from "react-icons/md";
 const SignUp = () => {
 
     
-    const link = 'http://localhost:5247/api/Authentication/register';
+    const link = 'http://localhost:5065/Authentication/auth/register';
 
     const [registrationSuccess, setRegistrationSuccess] = useState(false)
     const [registrationFailed, setRegistrationFailed] = useState(false)
