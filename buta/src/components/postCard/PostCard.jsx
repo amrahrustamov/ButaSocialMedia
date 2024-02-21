@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import '../../App.css'
 import { Link } from 'react-router-dom';
 import { IoEarthSharp } from "react-icons/io5";
-import { IoMdClose } from "react-icons/io";
 import { SlOptions } from "react-icons/sl";
 import { AiOutlineLike } from "react-icons/ai";
 import { FaRegComment } from "react-icons/fa";
@@ -12,14 +11,30 @@ import Comment from '../addComment/Comment';
 
 const PostCard = (props) => {
 
+  const [acceptButton, setAcceptButton] = useState(false);
+  const [option, setOption] = useState(false);
   const [comment, setComment] = useState(false);
   const commentHandler = () => {
     setComment(!comment)
   }
+  const AcceptRemoveHandler = () =>{
+    setOption(false);
+    setAcceptButton(!acceptButton);
+  }
   
-console.log(props.item.Tags);
   return (
     <div className='postCard'>
+      {
+        acceptButton === true && <div className='containerYesOrNo'>
+        <div className='yesOrNo'>
+        <p>Are you sure to delete?</p>
+        <div className='buttons'>
+          <Link className='yes' type='button'><span className='yesText'>Yes</span></Link>
+          <Link onClick={AcceptRemoveHandler} className='no' type='button'><span className='noText'>No</span></Link>
+        </div>
+      </div>
+      </div>
+      }
         <div className="topPostCard d-flex">
               <div className="leftOfTopPost d-flex">
                 <div className="img">
@@ -33,15 +48,19 @@ console.log(props.item.Tags);
                   <div className="time">
                     <span>{props.item.DateTime}<IoEarthSharp /></span>
                   </div>
-
-                </div>
-                
+                </div> 
               </div>
               <div className="rightOfTopPost">
                 <div className="icons">
-                  <Link><SlOptions /></Link>
-                  <Link><IoMdClose /></Link>
+                  <Link onClick={() => setOption(!option)}><SlOptions /></Link>
                 </div>
+                {
+                option === true && 
+                <div className='options'>
+                  <Link className='hide' type='button'>Hide</Link>
+                  <Link onClick={AcceptRemoveHandler} className='delete' type='button'>Delete</Link>
+                </div>
+                }
               </div>
         </div>
         <div className="post">
@@ -78,5 +97,4 @@ console.log(props.item.Tags);
     </div>
   )
 }
-
 export default PostCard

@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { MdOutlineCancel } from "react-icons/md";
 import { MdCancel } from "react-icons/md";
 import axios from 'axios';
+import { ClipLoader } from 'react-spinners';
 
 const AddPost = () => {
 
@@ -18,11 +19,11 @@ const AddPost = () => {
   const [tags, setTags] = useState([]);
   const [images, setImages] = useState([]);
   const [tagInput, setTagInput] = useState('');
-  const [formData, setFormData] = useState(new FormData());
+  const [buttonClick, setButtonClick] = useState(false);
+  const [formData] = useState(new FormData());
 
   const handleImageChange = (e) => {
     const files = Array.from(e.target.files);
-
     files.forEach((file) => {
       setImages((prevImages) => [...prevImages, URL.createObjectURL(file)]);
       formData.append('images', file);
@@ -33,24 +34,25 @@ const AddPost = () => {
     const updatedImages = [...images];
     updatedImages.splice(index, 1);
     setImages(updatedImages);
-    formData.delete('images[]', images[index]);
+    formData.delete('images', images[index]);
   };
   
   const handleSubmit = async (e) => {
+    setButtonClick(true);
     e.preventDefault();
     formData.append('text', blog.text);
     formData.append('location', blog.location);
     formData.append('tags', tags);
 
     try {
-      const response = await axios.post('http://localhost:5065/home/add_blog', formData, {
+      await axios.post('http://localhost:5065/home/add_blog', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
         withCredentials: true,
       });
 
-      console.log(response.data);
+      window.location.reload();
     } catch (error) {
       console.error(error);
     }
@@ -75,7 +77,7 @@ const AddPost = () => {
   };
  
 
-  const [response, setResponse] = useState(true);
+  const [response, setResponse] = useState(false);
   const addPost = () => {
     setResponse(response === true ? false : true);
   }
@@ -95,6 +97,9 @@ const AddPost = () => {
       {
         response === true &&
       <div className="addPost">
+        {buttonClick === true ? <div className='spinner'>
+        <ClipLoader color="#0764D1" cssOverride={{}} loading size={200} speedMultiplier={0.8} />
+        </div> :
         <div className="input d-flex row my-3">
           <input onChange={handleImageChange} type="file" name="fileInput" id="fileInput" className='hiddenInput d-none' multiple />
           <label htmlFor="fileInput" className="fileInputWrapper mb-2">
@@ -132,6 +137,7 @@ const AddPost = () => {
         </div>
               <button type='submit' className='shareButton'>Share</button>
         </div>
+        }
       </div>
       }
     </form>

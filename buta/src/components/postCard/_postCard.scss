@@ -5,7 +5,58 @@
     padding: 5px;
     margin-top: 20px;
     background-color: white;
-
+    .containerYesOrNo{
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.753);
+        left: 0;
+        top: 0;
+        z-index: 1;
+        .yesOrNo{
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 50px;
+            box-shadow: 0px 0px 50px 1px;
+            
+            p{
+                font-size: 40px;
+                color: black;
+            }
+            .buttons{
+                width: 200px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                .yes{
+                    .yesText{
+                        font-size: 30px;
+                        color: black;
+                    }
+                    .yesText:hover{
+                        color: rgb(109, 108, 108);
+                    }
+                }
+                .no{
+                    .noText{
+                        font-size: 30px;
+                        color: black;
+                    }
+                    .noText:hover{
+                        color: rgb(245, 10, 10);
+                    }
+                }
+            }
+        }
+    }
     .topPostCard{
         width: 100%;
         height: 100%;
@@ -56,6 +107,40 @@
         .rightOfTopPost{
             display: flex;
             align-items: center;
+            position: relative;
+            .options{
+                border:3px solid rgba(97, 96, 96, 0.158);
+                border-radius: 5px;
+                width: 120px;
+                height: auto;
+                top: 60px;
+                right: 20px;
+                background-color: white;
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                justify-content: center;
+                align-items: center;
+                padding: 10px 0;
+                .delete{
+                    font-weight: 500;
+                    color: red;
+                }
+                .hide{
+                    margin-bottom: 10px;
+                    font-weight: 500;
+                    color: black;
+                }
+                .delete:hover{
+                    font-weight: 1000;
+                    color: red;
+                }
+                .hide:hover{
+                    margin-bottom: 10px;
+                    font-weight: 1000;
+                    color: black;
+                }
+            }
             .icons{
                 display: flex;
                 justify-content: space-between;
