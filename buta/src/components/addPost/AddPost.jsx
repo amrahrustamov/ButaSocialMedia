@@ -18,7 +18,7 @@ const AddPost = () => {
 
   const [tags, setTags] = useState([]);
   const [images, setImages] = useState([]);
-  const [tagInput, setTagInput] = useState('');
+  const [tagInput, setTagInput] = useState([]);
   const [buttonClick, setButtonClick] = useState(false);
   const [visibility, setVisibility] = useState('public');
   const [formData] = useState(new FormData());
@@ -44,6 +44,7 @@ const AddPost = () => {
   };
   
   const handleSubmit = async (e) => {
+    console.log("Submited");
     setButtonClick(true);
     e.preventDefault();
     formData.append('text', blog.text);
@@ -58,15 +59,10 @@ const AddPost = () => {
         },
         withCredentials: true,
       });
-
       window.location.reload();
     } catch (error) {
       console.error(error);
     }
-  };
-
-  const handleTagChange = (e) => {
-    setTagInput(e.target.value);
   };
 
   const handleInputKeyDown = (e) => {
@@ -78,12 +74,16 @@ const AddPost = () => {
       }
     }
   };
+  const handleTagChange = (e) => {
+    setTagInput(e.target.value);
+  };
 
+  
   const handleTagRemove = (tagToRemove) => {
     setTags(tags.filter(tag => tag !== tagToRemove));
   };
- 
-
+  
+  
   const [response, setResponse] = useState(false);
   const addPost = () => {
     setResponse(response === true ? false : true);

@@ -102,7 +102,7 @@ const SignUp = () => {
                                         </div>
                                     </div>
                                     <div className="mb-1 inputs">
-                                        <label className='form-label'>Phone Number</label>
+                                        <label className='form-label'>Phone Number <span>(optional)</span></label>
                                         <div className="mb-1 conInput">
                                             <div className="conLogo">
                                                 <MdOutlinePhoneAndroid className='userLogo'/>

@@ -16,6 +16,7 @@ const PostCard = (props) => {
   const [acceptButton, setAcceptButton] = useState(false);
   const [option, setOption] = useState(false);
   const [comment, setComment] = useState(false);
+  const blog = props.item;
 
   const commentHandler = () => {
     setComment(!comment)
@@ -34,7 +35,6 @@ const PostCard = (props) => {
     const index = (currentIndex + 1) % props.item.Image.length;
     setCurrentIndex(index);
   };
-  console.log(props.item);
   return (
     <div className='postCard'>
       {
@@ -51,7 +51,7 @@ const PostCard = (props) => {
         <div className="topPostCard d-flex">
               <div className="leftOfTopPost d-flex">
                 <div className="img">
-                <img className='userImage' src={`http://localhost:5065/home/images/default.jpg`}alt="PostImage" />
+                <img className='userImage' src={`http://localhost:5065/home/images/${blog.Owner?.ProfileImage}`}alt="PostImage" />
                 </div>
                 <div className="timeAndName">
                   <div className="name d-flex">
@@ -87,7 +87,7 @@ const PostCard = (props) => {
         </div>
         <div className="about">
           <div className="containerAbout">
-            <div className="content"><p>{props.item.Content}</p></div>
+            <div className="content"><p className='blogContent'>{props.item.Content}</p></div>
             <div className="tags">{props.item.Tags && props.item.Tags.map(tag => <p>{tag}</p>)}</div>
             
             

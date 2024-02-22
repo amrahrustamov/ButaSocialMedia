@@ -169,7 +169,7 @@
             
             .slide{
             width: 100%;
-            height: 500px;
+            height: 600px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -206,12 +206,15 @@
     .about{
         padding: 10px;
         .containerAbout{
-            p{
-                font-size: 15px;
+            .blogContent{
+                font-size: 20px;
+                font-weight: 400;
+                font-family: cursive;
 
             }
             .content{
                 height: auto;
+                padding-left: 25px;
                 p{
                     margin:5px 0px 0px 5px;
                 }
@@ -229,7 +232,7 @@
                     border-radius: 5px;
                     padding: 3px;
                     color: white;
-                    background-color: #1186FD;
+                    background-color: #479cf1;
                 }
             }
         }

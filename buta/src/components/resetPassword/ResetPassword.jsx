@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../../../src/App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { MdOutlineMailLock } from "react-icons/md";
@@ -6,6 +6,37 @@ import { FcMindMap } from "react-icons/fc";
 import { Link } from 'react-router-dom';
 
 const ResetPassword = () => {
+
+    const [email, setEmail] = useState("");
+
+    const ResetUserPassword = async () => {
+        const link = 'http://localhost:5065/Authentication/auth/reset_password';
+        
+        fetch(link, {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+            body: email
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    };
+        const handleOnChange = (event) => {
+            setEmail(event);
+        };
+        const handleButtonClick = (event) => {
+            event.preventDefault();
+            ResetUserPassword();
+
+        };
   return (
     <div className="resetPassword">
         <div className="container">
@@ -29,11 +60,11 @@ const ResetPassword = () => {
                                             <div className="conLogo">
                                                 <MdOutlineMailLock className='userLogo'/>
                                             </div>
-                                            <input type="text" name="email" id="email" placeholder='Enter email' className='input-with-margin-left'/>
+                                            <input onChange={handleOnChange} type="text" name="email" id="email" placeholder='Enter email' className='input-with-margin-left'/>
                                         </div>
                                     </div>
                                     <div className="buttonBox inputs">
-                                        <button type='submit' className='btn btn-primary d-block w-100'>Reset</button>
+                                        <button onClick={handleButtonClick} type='submit' className='btn btn-primary d-block w-100'>Reset</button>
                                     </div>
                                 </form>
                             </div>
