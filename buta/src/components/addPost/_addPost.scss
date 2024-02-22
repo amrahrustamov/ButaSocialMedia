@@ -45,6 +45,24 @@
             margin: 0px;
             display: flex;
             justify-content: center;
+            .securityOfPost{
+                width: 95%;
+                display: flex;
+                justify-content: end;
+                    select{
+                        padding: 5px;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        
+                        option{
+                            padding: 5px;
+                        }
+                    }
+                    select:focus {
+                        outline: none;
+
+                    }
+            }
 
             .countFiles{
                 margin-left: 10px;

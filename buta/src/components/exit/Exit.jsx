@@ -1,15 +1,17 @@
 import React from 'react';
 import '../../App.css';
-import { Link } from 'react-router-dom';
+import { Link , useNavigate} from 'react-router-dom';
 import axios from 'axios';
 
 const Exit = (props) => {
+  const navigate = useNavigate();
     const handleExit = async () => {
       try {
         await axios.post('http://localhost:5065/authentication/logout', null, {
           withCredentials: true,
         });
         console.log('Logged out successfully');
+        navigate('/sign_in');
       } catch (error) {
         console.error('Error logging out:', error);
       }

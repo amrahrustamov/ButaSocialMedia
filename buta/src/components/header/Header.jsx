@@ -41,8 +41,6 @@ const Header = () => {
     
     getPosts();
   }, []);
-  console.log(user);
-
   return (
     <header>
       <div className="containerHeader">

@@ -20,9 +20,15 @@ const AddPost = () => {
   const [images, setImages] = useState([]);
   const [tagInput, setTagInput] = useState('');
   const [buttonClick, setButtonClick] = useState(false);
+  const [visibility, setVisibility] = useState('public');
   const [formData] = useState(new FormData());
 
+  const handleVisibiltyChange = (event) => {
+    setVisibility(event.target.value);
+  };
+
   const handleImageChange = (e) => {
+
     const files = Array.from(e.target.files);
     files.forEach((file) => {
       setImages((prevImages) => [...prevImages, URL.createObjectURL(file)]);
@@ -43,6 +49,7 @@ const AddPost = () => {
     formData.append('text', blog.text);
     formData.append('location', blog.location);
     formData.append('tags', tags);
+    formData.append('isPublic', visibility);
 
     try {
       await axios.post('http://localhost:5065/home/add_blog', formData, {
@@ -101,6 +108,12 @@ const AddPost = () => {
         <ClipLoader color="#0764D1" cssOverride={{}} loading size={200} speedMultiplier={0.8} />
         </div> :
         <div className="input d-flex row my-3">
+          <div className='securityOfPost'>
+          <select value={visibility} onChange={handleVisibiltyChange}>
+            <option value="public">Public</option>
+            <option value="friends">Friends</option>
+          </select>
+          </div>
           <input onChange={handleImageChange} type="file" name="fileInput" id="fileInput" className='hiddenInput d-none' multiple />
           <label htmlFor="fileInput" className="fileInputWrapper mb-2">
             <FcAddImage className="uploadIcon" />

@@ -10,9 +10,8 @@ import { ClipLoader } from 'react-spinners';
 const SignIn = () => {
     const navigate = useNavigate();
     const link = 'http://localhost:5065/Authentication/auth/login';
-    const [loginFailed, setLoginFailed] = useState(false);
     const [buttonClick, setButtonClick] = useState(false);
-    const [notification, setNotification] = useState();
+    const [notification, setNotification] = useState(null);
     const [loginUser, setLoginUser] = useState({
         email:"",
         password: "",
@@ -32,19 +31,18 @@ const SignIn = () => {
         })
         .then(response => {
             if (!response.ok) {
-                setLoginFailed(true);
-                setNotification("Login failed");
+                setButtonClick(false);
                 throw new Error('Network response was not ok');
             }
-            setLoginFailed(false);
               navigate('/home');
         })
         .catch((error) => {
             console.error('Error:', error);
+            setNotification("Login failed");
+            console.log(notification);
         });
     };
         const handleOnChange = (event) => {
-            setLoginFailed(false);
             setLoginUser({
                 ...loginUser,
                 [event.target.name]: event.target.value
@@ -103,14 +101,14 @@ const SignIn = () => {
                                     </div>
                                     <div className="buttonBox inputs">
                                         <button onClick={handleButtonClick} type='submit' className='btn btn-primary d-block w-100'>Sign in</button>
-                                        {loginFailed && (
+                                        {notification !== null &&
                                            
                                            <div className='mt-1 notification d-flex align-items-center justify-content-center w-100'>                
                                                 <div className='alert alert-warning text-center'> 
-                                                {notification}
+                                                <p>{notification}</p>
                                               </div>
-                                         </div>
-                                       )}
+                                         </div> 
+                                       }
                                     </div>
                                 </form>
                             </div>

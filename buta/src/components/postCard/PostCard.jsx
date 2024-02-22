@@ -7,13 +7,16 @@ import { AiOutlineLike } from "react-icons/ai";
 import { FaRegComment } from "react-icons/fa";
 import { PiShareFat } from "react-icons/pi";
 import { HiOutlineClipboardList } from "react-icons/hi";
+import { BsFillPersonFill } from "react-icons/bs";
 import Comment from '../addComment/Comment';
 
 const PostCard = (props) => {
 
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [acceptButton, setAcceptButton] = useState(false);
   const [option, setOption] = useState(false);
   const [comment, setComment] = useState(false);
+
   const commentHandler = () => {
     setComment(!comment)
   }
@@ -21,7 +24,17 @@ const PostCard = (props) => {
     setOption(false);
     setAcceptButton(!acceptButton);
   }
-  
+
+  const goToPrevSlide = () => {
+    const index = (currentIndex - 1 + props.item.Image.length) % props.item.Image.length;
+    setCurrentIndex(index);
+  };
+
+  const goToNextSlide = () => {
+    const index = (currentIndex + 1) % props.item.Image.length;
+    setCurrentIndex(index);
+  };
+  console.log(props.item);
   return (
     <div className='postCard'>
       {
@@ -38,15 +51,15 @@ const PostCard = (props) => {
         <div className="topPostCard d-flex">
               <div className="leftOfTopPost d-flex">
                 <div className="img">
-                {props.item.Owner.ProfileImage && <img className='userImage' src={`http://localhost:5065/home/images/${props.item.Owner.ProfileImage}`}alt="PostImage" />}
+                <img className='userImage' src={`http://localhost:5065/home/images/default.jpg`}alt="PostImage" />
                 </div>
                 <div className="timeAndName">
                   <div className="name d-flex">
-                    <p>Amrah Rustamov {props.item.Location}</p>
+                    <p>{props.item.OwnerFullName}</p>
                     <Link className='follow'>Follow</Link>
                   </div>
                   <div className="time">
-                    <span>{props.item.DateTime}<IoEarthSharp /></span>
+                    <span>{props.item.DateTime} {props.item.IsPublic === true ? <IoEarthSharp /> : <BsFillPersonFill />}</span>
                   </div>
                 </div> 
               </div>
@@ -64,9 +77,13 @@ const PostCard = (props) => {
               </div>
         </div>
         <div className="post">
-          <div className="imgContainer">
-          {props.item.Image && props.item.Image.map(img => <img className='postImage' src={`http://localhost:5065/home/images/${img}`}alt="PostImage" />)}
+        <div className="slideshow-container">
+          <div className="slide">
+            <img src={`http://localhost:5065/home/images/${props.item.Image[currentIndex]}`} alt={`Slide ${currentIndex}`} />
           </div>
+          <button className="prev" onClick={goToPrevSlide}>&#10094;</button>
+          <button className="next" onClick={goToNextSlide}>&#10095;</button>
+        </div>
         </div>
         <div className="about">
           <div className="containerAbout">
