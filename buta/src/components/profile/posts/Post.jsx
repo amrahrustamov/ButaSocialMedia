@@ -1,25 +1,31 @@
 import axios from 'axios';
 import '../../../App.css'
 import React, { useEffect, useState } from 'react'
-import UserPostCard from '../../postCard/user/UserPostCard';
 import { NavLink } from 'react-router-dom';
 import { BsGrid3X3Gap } from "react-icons/bs";
 import { CiBoxList } from "react-icons/ci";
+import PostCard from '../../postCard/PostCard';
 
 const Post = () => {
   const [posts, setPosts] = useState();
 
-  useEffect(() =>{
+  useEffect(() => {
     const getPosts = async () => {
-      await axios.get('https://randomuser.me/api/?results=50')
-      .then(response => setPosts(response.data.results))
-      .catch(err => console.log(err))
-  }
-
-
-  getPosts();
-  
-},[]);
+      try {
+        const response = await axios.post('http://localhost:5065/profile/user_blogs', {
+          withCredentials: true,
+          responseType: 'blob',
+        });
+        setPosts(response.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+    getPosts();
+  }, []);
+  console.log("post");
+  console.log(posts);
+  console.log("post");
   return (
     <div className="posts">
 
@@ -31,7 +37,7 @@ const Post = () => {
               {
                 posts && posts.map((item, index) => {
                   return (
-                    <UserPostCard key={index} item={item}/>
+                    <PostCard key={index} item={item}/>
                   )
                 })
               }

@@ -8,8 +8,6 @@ import AddPost from '../addPost/AddPost'
 
 
 const Profile = () => {
-
-
   const [selectedLinkId, setSelectedLinkId] = useState(null);
 
   const handleLinkIdChange = (id) => {
@@ -27,6 +25,7 @@ const Profile = () => {
         selectedLinkId === 2 && <Friends />
       }
       <AddPost />
+
     </div>
   )
 }

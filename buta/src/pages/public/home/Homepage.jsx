@@ -14,7 +14,7 @@ const Homepage = () => {
       try {
         const response = await axios.post('http://localhost:5065/home/all_blogs', {
           withCredentials: true,
-          responseType: 'blob',
+          
         });
         setPosts(response.data);
       } catch (error) {

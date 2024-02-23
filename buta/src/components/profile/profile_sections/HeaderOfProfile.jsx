@@ -10,7 +10,7 @@ const HeaderOfProfile = ({onLinkIdChange}) => {
   const [user, setUser] = useState(null);
   const [exit, setExit] = useState(false);
   const [formData] = useState(new FormData());
-
+  
   const getIdHandle = (id) => {
     onLinkIdChange(id);
   }
@@ -24,7 +24,6 @@ const HeaderOfProfile = ({onLinkIdChange}) => {
     updateProfileImg();
   };
   
-
   const updateProfileImg = async () => {
     try {
       await axios.post('http://localhost:5065/profile/add_profile_image', formData, {
@@ -38,7 +37,7 @@ const HeaderOfProfile = ({onLinkIdChange}) => {
     }
   };
   useEffect(() => {
-    const getPosts = async () => {
+    const getUserInfo = async () => {
       try {
         const response = await axios.get('http://localhost:5065/profile/user_info', {
           withCredentials: true,
@@ -49,7 +48,7 @@ const HeaderOfProfile = ({onLinkIdChange}) => {
       }
     };
     
-    getPosts();
+    getUserInfo();
   }, []);
 
   return (
