@@ -12,8 +12,6 @@ export const UserProvider = ({ children }) => {
     const cookieValue = getCookie('Email');
     if (cookieValue) {
       setUser(JSON.parse(cookieValue));
-      console.log(user);
-      console.log("userString");
     }
   }, [user]);
 
@@ -32,9 +30,15 @@ export const UserProvider = ({ children }) => {
         }
         return null;
       };
+      const updateUser = (newUser) => {
+        setUser(newUser);
+        console.log("data.user");
+        console.log(newUser);
+        console.log("data.user");
+      };
 
     return(
-        <UserContext.Provider value={{user}}>
+        <UserContext.Provider value={{user, updateUser}}>
             {children}
         </UserContext.Provider>
     )

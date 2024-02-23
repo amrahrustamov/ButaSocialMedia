@@ -7,6 +7,7 @@ import { PiLockKeyFill } from "react-icons/pi";
 import { FcMindMap } from "react-icons/fc";
 import { MdOutlineMailLock } from "react-icons/md";
 import { MdOutlinePhoneAndroid } from "react-icons/md";
+import { ClipLoader } from 'react-spinners';
 
 const SignUp = () => {
 
@@ -16,6 +17,7 @@ const SignUp = () => {
     const [registrationSuccess, setRegistrationSuccess] = useState(false)
     const [registrationFailed, setRegistrationFailed] = useState(false)
     const [notification, setNotification] = useState()
+    const [buttonClick, setButtonClick] = useState(false)
 
     const [registerUser, setRegisterUser] = useState({
         surname: "",
@@ -46,20 +48,21 @@ const SignUp = () => {
         })
         .then(response => {
             if (!response.ok) {
+                setButtonClick(false);
                 setRegistrationFailed(true);
                 setRegistrationSuccess(false);
                 setNotification("Register failed");
                 throw new Error('Network response was not ok');
             }
-            setRegisterUser(modelRegisterUser)
+            setButtonClick(false)
             setRegistrationSuccess(true);
             return response.json();
         })
         .then(data => {
             setRegistrationSuccess(true);
-            console.log(data);
         })
         .catch((error) => {
+            setButtonClick(false)
             console.error('Error:', error);
         });
     };
@@ -73,6 +76,7 @@ const SignUp = () => {
         };
         const handleButtonClick = (event) => {
             event.preventDefault();
+            setButtonClick(true)
             postUser();
         };
         
@@ -128,15 +132,7 @@ const SignUp = () => {
                                             <input type="text" name="lastname" id="lastname" value={registerUser.lastname} onChange={handleOnChange} placeholder='Enter your lastname' className='input-with-margin-left'/>
                                         </div>
                                     </div>
-                                    {/* <div className="mb-1 inputs">
-                                        <label className='form-label'>Date of Birth</label>
-                                        <div className="mb-1 conInput">
-                                            <div className="conLogo">
-                                                <BsCalendar2Date className='userLogo'/>
-                                            </div>
-                                            <input type="date" name="birthdate" id="birthdate" value={registerUser.} placeholder='birthdate' className='input-with-margin-left birthday'/>
-                                        </div>
-                                    </div> */}
+
                                     <div className="mb-1 inputs">
                                         <label className='form-label'>Password</label>
                                         <div className="mb-1 conInput">
@@ -149,6 +145,9 @@ const SignUp = () => {
                                     </div>
                                     <div className="buttonBox inputs">
                                         <button type='submit' onClick={handleButtonClick} className='btn btn-primary d-block w-100 mt-1'>Register</button>
+                                        {buttonClick === true && <div className='spinner'>
+                                            <ClipLoader color="#0764D1" cssOverride={{}} loading size={50} speedMultiplier={0.8} />
+                                            </div>}
                                         {registrationSuccess && (
                                            
                                            <div className='mt-1 notification d-flex align-items-center justify-content-center w-100'>

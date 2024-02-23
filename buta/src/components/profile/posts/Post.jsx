@@ -1,12 +1,13 @@
 import axios from 'axios';
-import '../../../App.css'
-import React, { useEffect, useState } from 'react'
-import { NavLink } from 'react-router-dom';
-import { BsGrid3X3Gap } from "react-icons/bs";
-import { CiBoxList } from "react-icons/ci";
+import '../../../App.css';
+import React, { useContext, useEffect, useState } from 'react'
 import PostCard from '../../postCard/PostCard';
+import AddPost from '../../addPost/AddPost';
+import { UserContext } from '../../../context/UserProvider';
 
 const Post = () => {
+  const data = useContext(UserContext);
+  console.log(data);
   const [posts, setPosts] = useState();
 
   useEffect(() => {
@@ -14,7 +15,6 @@ const Post = () => {
       try {
         const response = await axios.post('http://localhost:5065/profile/user_blogs', {
           withCredentials: true,
-          responseType: 'blob',
         });
         setPosts(response.data);
       } catch (error) {
@@ -23,24 +23,19 @@ const Post = () => {
     };
     getPosts();
   }, []);
-  console.log("post");
-  console.log(posts);
-  console.log("post");
   return (
     <div className="posts">
-
       <div className="postCards">
-        <div className="listAndGridBox">
-          <NavLink className="list" id='1' ><CiBoxList /></NavLink>
-          <NavLink className="grid" id='2'><BsGrid3X3Gap /></NavLink>
+        <div  className="cards">
+        <AddPost />
+        {
+          posts && posts.map((item, index) => {
+            return (
+              <PostCard key={index} item={item}/>
+              )
+            })
+          }
         </div>
-              {
-                posts && posts.map((item, index) => {
-                  return (
-                    <PostCard key={index} item={item}/>
-                  )
-                })
-              }
       </div>
     </div>
   )

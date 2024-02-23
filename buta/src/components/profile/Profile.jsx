@@ -4,7 +4,6 @@ import HeaderOfProfile from './profile_sections/HeaderOfProfile'
 import Header from '../header/Header'
 import Post from './posts/Post'
 import Friends from './friends/Friends'
-import AddPost from '../addPost/AddPost'
 
 
 const Profile = () => {
@@ -24,7 +23,6 @@ const Profile = () => {
       {
         selectedLinkId === 2 && <Friends />
       }
-      <AddPost />
 
     </div>
   )
