@@ -1,13 +1,11 @@
 import axios from 'axios';
 import '../../../App.css';
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import PostCard from '../../postCard/PostCard';
 import AddPost from '../../addPost/AddPost';
-import { UserContext } from '../../../context/UserProvider';
+
 
 const Post = () => {
-  const data = useContext(UserContext);
-  console.log(data);
   const [posts, setPosts] = useState();
 
   useEffect(() => {

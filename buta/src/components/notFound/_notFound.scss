@@ -1,0 +1,22 @@
+.boxNotFound{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .containerNotFound{
+        height: 300px;
+        a{
+            background-color: aqua;
+            font-size: 50px;
+            margin-left: 10px;
+            color: white;
+            text-shadow: 8px 8px 5px rgba(0, 0, 0, 0.5);
+        }
+        p{
+            font-size: 50px;
+            text-shadow: 8px 8px 5px rgba(0, 0, 0, 0.5);text-shadow: 8px 8px 5px rgba(0, 0, 0, 0.5);
+        }
+    }
+
+}

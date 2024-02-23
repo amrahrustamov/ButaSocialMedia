@@ -7,7 +7,7 @@ import Friends from './friends/Friends'
 
 
 const Profile = () => {
-  const [selectedLinkId, setSelectedLinkId] = useState(null);
+  const [selectedLinkId, setSelectedLinkId] = useState(1);
 
   const handleLinkIdChange = (id) => {
     setSelectedLinkId(id);

@@ -51,7 +51,7 @@ const Header = () => {
             <div className="col-lx-3 col-lg-3 col-md-4 col-sm-4 middlePartOfHeader">
                 <div className='containerOfMiddlePart'>
                     <div id='friendsStory'><NavLink to={'/friends_story'}><LiaUserFriendsSolid /></NavLink></div>
-                    <div id='allStory'><NavLink to={'/home'}><AiOutlineHome /></NavLink></div>
+                    <div id='allStory'><NavLink to={'/'}><AiOutlineHome /></NavLink></div>
                     <div id='pageStory'><NavLink to={'/group_story'}><LiaLayerGroupSolid /></NavLink></div>   
                 </div>
                  

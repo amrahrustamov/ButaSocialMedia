@@ -6,7 +6,7 @@ export const UserContext = createContext();
     return useContext(UserContext);
   };
 export const UserProvider = ({ children }) => {
-    const [user, setUser] = useState();
+    const [user, setUser] = useState(false);
 
   useEffect(() => {
     const cookieValue = getCookie('Email');
@@ -32,9 +32,6 @@ export const UserProvider = ({ children }) => {
       };
       const updateUser = (newUser) => {
         setUser(newUser);
-        console.log("data.user");
-        console.log(newUser);
-        console.log("data.user");
       };
 
     return(

@@ -38,7 +38,6 @@ const PostCard = (props,index) => {
     const OptionChoise = () =>{
       setAcceptButton(!acceptButton);
       setOption(false);
-      console.log("daxil oldu");
   }
 
   const goToPrevSlide = () => {
@@ -50,7 +49,6 @@ const PostCard = (props,index) => {
     const index = (currentIndex + 1) % props.item.Image.length;
     setCurrentIndex(index);
   };
-  console.log(props.item);
   return (
     <div className='postCard' key={index}>
       {
@@ -59,7 +57,7 @@ const PostCard = (props,index) => {
         <p>Are you sure to delete?</p>
         <div className='buttons'>
           <Link onClick={()=>AcceptRemoveHandler(props.item.Id)} className='yes' type='button'><span className='yesText'>Yes</span></Link>
-          <Link className='no' type='button'><span className='noText'>No</span></Link>
+          <Link onClick={OptionChoise} className='no' type='button'><span className='noText'>No</span></Link>
         </div>
       </div>
       </div>
@@ -75,7 +73,7 @@ const PostCard = (props,index) => {
                   <div className="name d-flex">
                     <p>{props.item.Owner.FirstName} {props.item.Owner.LastName}</p>
                     {
-                      user !== props.item.OwnerId &&
+                      user !== props.item.OwnerId ??
                       <Link className='follow'>Follow</Link>
                     }
                   </div>

@@ -6,7 +6,7 @@ import ResetPassword from './components/resetPassword/ResetPassword';
 import Homepage from './pages/public/home/Homepage';
 import { UserProvider } from './context/UserProvider';
 import Profile from './components/profile/Profile';
-import PrivateRoute from './components/PrivateRoute';
+import NotFound from './components/notFound/NotFound';
 
 function App() {
  
@@ -18,10 +18,9 @@ function App() {
             <Route path='/sign_in' element={<SignIn />} />
             <Route path='/sign_up' element={<SignUp />} />
             <Route path='/reset_Password' element={<ResetPassword />} />
-            <Route path='/home' element={<Homepage />} />
-            <Route path='/manage' element={<Profile />} />
+            <Route path='/' element={<Homepage />} />
             <Route path='/profile' element={<Profile />} />
-            <Route path='/' element={<PrivateRoute element={<Homepage />} />}/>
+            <Route path='*' element={<NotFound />} />
           </Routes>
         </UserProvider>
       </BrowserRouter>

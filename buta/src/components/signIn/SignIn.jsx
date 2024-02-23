@@ -6,6 +6,7 @@ import { PiLockKeyFill } from "react-icons/pi";
 import { FcMindMap } from "react-icons/fc";
 import { Link, useNavigate } from 'react-router-dom';
 import { ClipLoader } from 'react-spinners';
+import { UserContext } from '../../context/UserProvider';
 
 const SignIn = () => {
     const navigate = useNavigate();
@@ -34,7 +35,7 @@ const SignIn = () => {
                 setButtonClick(false);
                 throw new Error('Network response was not ok');
             }
-              navigate('/home');
+            navigate('/');
         })
         .catch((error) => {
             console.error('Error:', error);

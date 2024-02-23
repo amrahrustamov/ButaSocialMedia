@@ -478,7 +478,7 @@ header .containerHeader .rightPartOfHeader .containerOfRightPart div img {
   background-color: white;
 }
 .postCard .containerYesOrNo {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100vh;
   background-color: rgba(255, 255, 255, 0.753);
@@ -878,18 +878,21 @@ header .containerHeader .rightPartOfHeader .containerOfRightPart div img {
 }
 .headerOfProfile .mainBox .first .userPhotoAndName .fileInputWrapper {
   position: absolute;
-  top: 260px;
-  left: 290px;
-  display: flex;
+  top: 150px;
+  left: 220px;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 .headerOfProfile .mainBox .first .userPhotoAndName .fileInputWrapper svg {
-  font-size: 30px;
+  font-size: 40px;
+  color: rgba(31, 31, 31, 0.7176470588);
+  cursor: pointer;
 }
 .headerOfProfile .mainBox .first .userPhotoAndName .fileInputWrapper span {
   font-size: 10px;
+  color: rgba(31, 31, 31, 0.7176470588);
 }
 .headerOfProfile .mainBox .first .userPhotoAndName .imageBox {
   width: 100%;
@@ -898,33 +901,41 @@ header .containerHeader .rightPartOfHeader .containerOfRightPart div img {
   width: 280px;
   height: 280px;
   border-radius: 50%;
-  border: 5px solid rgb(141, 135, 135);
+  box-shadow: 0px 0px 50px 1px;
 }
 .headerOfProfile .mainBox .first .userPhotoAndName .name {
   font-size: 40px;
   width: 100%;
   height: 100px;
+  text-shadow: 8px 8px 5px rgba(0, 0, 0, 0.5);
+}
+.headerOfProfile .mainBox .first .userPhotoAndName:hover .fileInputWrapper {
+  display: flex;
 }
 .headerOfProfile .mainBox .first .userInfo {
   width: 60%;
-  height: 100%;
+  height: 450px;
   margin: 2px !important;
+  display: flex;
+  justify-content: center;
 }
 .headerOfProfile .mainBox .first .userInfo .shortInfo {
   background-color: rgba(0, 0, 0, 0.048);
-  border: 2px solid rgb(141, 135, 135);
+  box-shadow: 0px 0px 50px 1px;
   border-radius: 8px;
-  padding: 100px 0px 100px 20px;
   display: flex;
   flex-direction: column;
   position: relative;
   width: 80%;
+  height: 350px !important;
+  margin-top: 10px;
 }
 .headerOfProfile .mainBox .first .userInfo .shortInfo p {
-  font-size: 20px;
+  font-size: 15px;
+  margin: 0 0 2px 10px !important;
 }
 .headerOfProfile .mainBox .first .userInfo .shortInfo p span {
-  font-size: 25px;
+  font-size: 20px;
 }
 .headerOfProfile .mainBox .first .userInfo .shortInfo button {
   border: 0;
@@ -1163,4 +1174,96 @@ header .containerHeader .rightPartOfHeader .containerOfRightPart div img {
 }
 .posts .postCards .listAndGridBox .list {
   margin-right: 80px;
+}
+
+.editInfo {
+  width: 60%;
+  height: 450px;
+  margin: 2px !important;
+  display: flex;
+  justify-content: center;
+}
+.editInfo .editInfoContainer {
+  background-color: rgba(0, 0, 0, 0.048);
+  box-shadow: 0px 0px 50px 1px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  height: 400px !important;
+  margin-top: 10px;
+  padding: 10px;
+}
+.editInfo .editInfoContainer .inputs {
+  width: 60%;
+  height: 100%;
+}
+.editInfo .editInfoContainer .inputs input {
+  margin: 3px 0 3px 0 !important;
+  width: 100%;
+  height: 32px;
+  padding: 5px;
+  border-radius: 5px;
+}
+.editInfo .editInfoContainer .inputs input:focus {
+  outline: none;
+}
+.editInfo .editInfoContainer .other {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+}
+.editInfo .editInfoContainer .other .publicPrivate {
+  display: flex;
+  flex-direction: row;
+}
+.editInfo .editInfoContainer .other .publicPrivate p {
+  font-size: 20px;
+  margin: 5px;
+}
+.editInfo .editInfoContainer .other .publicPrivate select {
+  height: 30px;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
+}
+.editInfo .editInfoContainer .other .publicPrivate select:focus {
+  outline: none;
+}
+.editInfo .editInfoContainer .save {
+  margin-left: 10px;
+}
+.editInfo .editInfoContainer button {
+  width: 70px;
+  height: 45px;
+  bottom: -50px;
+  border: 1px solid rgba(0, 0, 0, 0.216);
+  background-color: rgba(0, 0, 0, 0.082);
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+.editInfo .editInfoContainer button:hover {
+  background-color: rgba(14, 11, 222, 0.812);
+  color: white;
+}
+
+.boxNotFound {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.boxNotFound .containerNotFound {
+  height: 300px;
+}
+.boxNotFound .containerNotFound a {
+  background-color: aqua;
+  font-size: 50px;
+  margin-left: 10px;
+  color: white;
+  text-shadow: 8px 8px 5px rgba(0, 0, 0, 0.5);
+}
+.boxNotFound .containerNotFound p {
+  font-size: 50px;
+  text-shadow: 8px 8px 5px rgba(0, 0, 0, 0.5);
+  text-shadow: 8px 8px 5px rgba(0, 0, 0, 0.5);
 }/*# sourceMappingURL=App.css.map */

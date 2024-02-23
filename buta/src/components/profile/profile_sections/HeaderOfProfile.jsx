@@ -1,14 +1,17 @@
 import { useEffect, useState } from 'react';
 import '../../../App.css'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import axios from 'axios';
 import { TbUpload } from "react-icons/tb";
-import { CiEdit } from "react-icons/ci";
 import { ClipLoader } from 'react-spinners';
+import EditUser from './manageUser/EditUser';
+import { CiEdit } from "react-icons/ci";
 
 const HeaderOfProfile = ({onLinkIdChange}) => {
+  const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [exit, setExit] = useState(false);
+  const [editButton, setEditButton] = useState(false);
   const [formData] = useState(new FormData());
   
   const getIdHandle = (id) => {
@@ -45,11 +48,18 @@ const HeaderOfProfile = ({onLinkIdChange}) => {
         setUser(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
+        navigate("/sign_in")
+        
       }
     };
     
     getUserInfo();
   }, []);
+
+
+  const handleEditInfo = () =>{
+    setEditButton(true)
+  }
 
   return (
     <div className='w-100 d-flex  justify-content-center headerOfProfile'>
@@ -66,18 +76,25 @@ const HeaderOfProfile = ({onLinkIdChange}) => {
                         { user.ProfileImage !== null ? <img src={`http://localhost:5065/home/images/${user.ProfileImage}`} alt="" /> : ""}
                     </div>
                     <div className='name py-3 d-flex justify-content-center align-items-center'>
-                    {user.FirstName + " " + user.LastName}
+                    {user.FirstName + " " + user.LastName}           
                     </div>
                 </div>
-                <div className="userInfo">
-                    <div className="shortInfo">
-                        <p>Country <span>Azerbaijan</span></p>
-                        <p>City <span>Baku</span></p>
-                        <p>Friends  <span>250</span></p>
-                        <p>Activite <span>Travel , Sport,  Movie</span></p>
-                        <button className='editProfile'><CiEdit /></button>
-                    </div>
-                </div>
+                {
+                  editButton ? <EditUser /> : <div className="userInfo">
+                  <div className="shortInfo">
+                      <p>Country <span>Azerbaijan</span></p>
+                      <p>City <span>Baku</span></p>
+                      <p>Friends  <span>250</span></p>
+                      <p>Activite <span>Travel , Sport,  Movie</span></p>
+                      <p>Birthday <span>28.02.1994</span></p>
+                      <p>Gender <span>Male</span></p>
+                      <p>About  <span>......</span></p>
+                      <p>Education  <span>......</span></p>
+                      <button onClick={handleEditInfo} className='editProfile'><CiEdit /></button>
+                  </div>
+              </div>
+                }
+                
             </div>
 
             <div className='second'>
