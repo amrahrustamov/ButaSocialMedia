@@ -10,9 +10,10 @@ import { BiSolidMessageDetail } from "react-icons/bi";
 import { IoMdNotifications } from "react-icons/io";
 import Exit from '../exit/Exit';
 import axios from 'axios';
+import Notification from '../notification/Notification';
 
 const Header = () => {
-
+  const [notification, setNotification] = useState(false);
   const [exit, setExit] = useState(false);
   const  handleClick = () => {
     setExit(!exit)
@@ -58,10 +59,10 @@ const Header = () => {
             </div>
             <div className="col-lx-3 col-lg-3 col-md-4 col-sm-4 rightPartOfHeader">
               <div className="containerOfRightPart">
-                <div className='menu'><Link><CgMenuGridO /></Link></div>
-                <div className='messages'><Link><BiSolidMessageDetail /></Link></div>
-                <div className='notifications'><Link><IoMdNotifications /></Link></div>
-                <div className='profilePhoto'><Link onClick={handleClick}><img src={user} alt="logo" /></Link></div>
+                <div className='menu box'><Link><CgMenuGridO /></Link></div>
+                <div className='messages box'><Link><BiSolidMessageDetail /></Link></div>
+                <div className='notifications box'><Link onClick={()=>setNotification(!notification)}><IoMdNotifications /></Link>{notification && <Notification />}</div>
+                <div className='profilePhoto box'><Link onClick={handleClick}><img src={user} alt="logo" /></Link></div>
               </div>
               <Exit exit={exit}/>
             </div>

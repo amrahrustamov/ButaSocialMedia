@@ -39,6 +39,7 @@ const HeaderOfProfile = ({onLinkIdChange}) => {
       console.error('Error fetching data:', error);
     }
   };
+
   useEffect(() => {
     const getUserInfo = async () => {
       try {
@@ -82,14 +83,14 @@ const HeaderOfProfile = ({onLinkIdChange}) => {
                 {
                   editButton ? <EditUser /> : <div className="userInfo">
                   <div className="shortInfo">
-                      <p>Country <span>Azerbaijan</span></p>
-                      <p>City <span>Baku</span></p>
-                      <p>Friends  <span>250</span></p>
-                      <p>Activite <span>Travel , Sport,  Movie</span></p>
-                      <p>Birthday <span>28.02.1994</span></p>
-                      <p>Gender <span>Male</span></p>
-                      <p>About  <span>......</span></p>
-                      <p>Education  <span>......</span></p>
+                      <p>Country <span></span></p>
+                      <p>City <span></span></p>
+                      <p>Friends  <span></span></p>
+                      <p>Activite <span></span></p>
+                      <p>Birthday <span></span></p>
+                      <p>Gender <span></span></p>
+                      <p>About  <span></span></p>
+                      <p>Education  <span></span></p>
                       <button onClick={handleEditInfo} className='editProfile'><CiEdit /></button>
                   </div>
               </div>

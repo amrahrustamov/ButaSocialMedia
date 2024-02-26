@@ -81,9 +81,7 @@ header{
                     svg{
                         font-size: 30px;
                     }
-                    .active{
-                        border-bottom: 2px solid black;
-                    }
+
                 }
                 #friendsStory:hover{
                     background-color: #F7F7FF;
@@ -104,7 +102,7 @@ header{
                 align-items: center;
                 height: 100%;
 
-                div{
+                .box{
                     width: 45px;
                     height: 45px;
                     background-color: #e6e6ec;
@@ -114,7 +112,7 @@ header{
                     align-items: center;
                     justify-content: center;
                     overflow: hidden;
-
+                    position: relative;
                     svg{
                         font-size: 30px;
                     }

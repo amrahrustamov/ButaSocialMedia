@@ -37,6 +37,9 @@
 
                 .imageBox{
                     width: 100%;
+                    display: flex;
+                    justify-content: center !important;
+                    align-items: center !important;
 
                     img{
                         width: 280px;

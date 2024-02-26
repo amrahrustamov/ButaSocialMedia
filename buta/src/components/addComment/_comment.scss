@@ -4,7 +4,13 @@
     display: flex;
     justify-content: center;
     padding-top: 10px;
-
+    margin: 0 !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.24);
+    .comments:hover{
+        .settings{
+            display: flex;
+        }
+    }
     .comments{
         display: flex;
         flex-direction: row;
@@ -16,7 +22,7 @@
         .userImg{
             width: 50px;
             height: 50px;
-            border: 3px solid rgba(0, 0, 0, 0.384);
+            border: 2px solid #0764D1;
             border-radius: 50%;
             cursor: pointer;
             overflow: hidden;
@@ -34,9 +40,10 @@
             border-radius: 10px;
             background-color: #EFF2F5;
             width: auto;
-            margin: 5px 0 5px 20px;
+            margin: 5px 0 0px 20px;
             display: flex;
             flex-direction: row;
+            box-shadow: 2px 2px 5px 0px #0764D1;
 
             .user{
                 width: 100%;
@@ -45,30 +52,34 @@
             }
             .comment{
                 width: auto;
+                margin-bottom: 3px;
             }
         }
         .settings{
             width: 5%;
-            display: flex;
-            justify-content: center;
-            position: absolute;
-            right: 5px;
-            top: 5px;
+            display: none;
+            margin-left: 20px;
 
             svg{
                 color: grey;
             }
         }
+
     }
-    .time{
-        margin-top: 5px;
-        font-weight: 400;
+    .timeContainer{
+        padding-left: 90px;
+
+        .time{
+            margin: 5px 0px;
+            font-weight: 400;
+        }
     }
     .addComment{
         display: flex;
         flex-direction: row;
-        height: 40px;
-        margin-top: 5px;
+        height: 60px;
+        padding-top: 5px;
+        border-top: 1px solid rgba(0, 0, 0, 0.24);
         .conImg{
 
             .image{
@@ -91,6 +102,9 @@
             height: 100%;
             border: none;
             margin: 0px 20px;
+        }
+        input:focus{
+       outline: none;
         }
         button{
             height: 100%;

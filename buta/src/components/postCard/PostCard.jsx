@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import '../../App.css'
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { IoEarthSharp } from "react-icons/io5";
 import { SlOptions } from "react-icons/sl";
 import { AiOutlineLike } from "react-icons/ai";
@@ -49,6 +49,28 @@ const PostCard = (props,index) => {
     const index = (currentIndex + 1) % props.item.Image.length;
     setCurrentIndex(index);
   };
+   
+   function formatDate(dateString) {
+    const date = new Date(dateString);
+    const now = new Date();
+    const diff = now - date;
+  
+    const seconds = Math.floor(diff / 1000);
+    const minutes = Math.floor(seconds / 60);
+    const hours = Math.floor(minutes / 60);
+    const days = Math.floor(hours / 24);
+  
+    if (days > 0) {
+      return `${days} day${days > 1 ? 's' : ''} ago`;
+    } else if (hours > 0) {
+      return `${hours} hour${hours > 1 ? 's' : ''} ago`;
+    } else if (minutes > 0) {
+      return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
+    } else {
+      return 'Just now';
+    }
+  }
+  
   return (
     <div className='postCard' key={index}>
       {
@@ -78,7 +100,7 @@ const PostCard = (props,index) => {
                     }
                   </div>
                   <div className="time">
-                    <span>{props.item.DateTime} {props.item.IsPublic === true ? <IoEarthSharp /> : <BsFillPersonFill />}</span>
+                    <span>{formatDate(props.item.DateTime)} {props.item.IsPublic === true ? <IoEarthSharp /> : <BsFillPersonFill />}</span>
                   </div>
                 </div> 
               </div>
@@ -119,15 +141,12 @@ const PostCard = (props,index) => {
         <div className="bottomPostCard">
           <div className="countOfActivites">
             <div className="leftPart">{props.item.Likes && <span><AiOutlineLike /> {props.item.Likes.length}</span>}</div>
-            <div className="rightPart">
-              {props.item.Commets && <span> <FaRegComment /> {props.item.Commets.length}</span>}
-            </div>
           </div>
           <div className="buttons">
-              <Link><AiOutlineLike /></Link>
-              <Link onClick={commentHandler}><FaRegComment /></Link>
-              <Link><PiShareFat /></Link>
-              <Link><HiOutlineClipboardList /></Link>
+              <NavLink><AiOutlineLike />{props.item.Likes && <span> {props.item.Likes.length}</span>}</NavLink>
+              <NavLink onClick={commentHandler}><FaRegComment />{props.item.Commets && <span> {props.item.Commets.length}</span>}</NavLink>
+              <NavLink><PiShareFat /></NavLink>
+              <NavLink><HiOutlineClipboardList /></NavLink>
           </div>
 
         </div>

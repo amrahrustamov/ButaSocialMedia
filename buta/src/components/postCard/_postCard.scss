@@ -4,7 +4,8 @@
     border-radius: 20px;
     padding: 5px;
     margin-top: 20px;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
+    position: relative;
     .containerYesOrNo{
         position: fixed;
         width: 100%;
@@ -12,7 +13,7 @@
         background-color: rgba(255, 255, 255, 0.753);
         left: 0;
         top: 0;
-        z-index: 1;
+       
         .yesOrNo{
             border-radius: 5px;
             display: flex;
@@ -108,8 +109,10 @@
             display: flex;
             align-items: center;
             position: relative;
+            
             .options{
                 border:3px solid rgba(97, 96, 96, 0.158);
+                
                 border-radius: 5px;
                 width: 120px;
                 height: auto;
@@ -162,9 +165,11 @@
         border-top:1px solid rgba(0, 0, 0, 0.175);
         margin: 10px 0;
         
+        
         .slideshow-container{
            width: 400px;
            position: relative;
+          
             
             
             .slide{
@@ -175,9 +180,11 @@
             justify-content: center;
             background-color: rgba(17, 17, 17, 0.062);
             overflow: hidden;
+            
 
                 img{
                     width: 100%;
+                    
                 }       
             }
             button{
@@ -280,7 +287,7 @@
                 justify-content: center;
                 color: rgb(95, 95, 95);
                 svg{
-                    font-size: 40px;
+                    font-size: 32px;
                     color: rgb(95, 95, 95);
                     margin: 0 5px;
                 }
