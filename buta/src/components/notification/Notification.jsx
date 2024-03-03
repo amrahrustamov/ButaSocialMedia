@@ -1,24 +1,9 @@
-import React, { useEffect, useState } from 'react'
 import '../../App.css'
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-const Notification = () => {
-    const [notifications,setNotifications] = useState(null);
-
-    useEffect(() => {
-        const getNotifications = async () => {
-          try {
-            const response = await axios.get('http://localhost:5065/home/notifications', {
-              withCredentials: true,  
-            });
-            setNotifications(response.data);
-          } catch (error) {
-            console.error('Error fetching data:', error);
-          }
-        };
-        getNotifications();
-      }, []);
+const Notification = (props) => {
+const notifyValues = props.notificationsValue;
     
       function formatDate(dateString) {
         const date = new Date(dateString);
@@ -52,13 +37,8 @@ const Notification = () => {
   return (
     <div className='listOfNotifications'>
         <div className='notificationContainer'>
-            <div className='sectionName'>
-                <div className='textConatiner'>
-                    <p>Notifications</p>
-                </div>
-            </div>
-            {notifications !== null && notifications.map((item, id) => (
-              <Link onClick={()=>SeeNotification(item.Id)}>
+            {notifyValues !== null && notifyValues.map((item, id) => (
+              <Link onClick={()=>SeeNotification(item.Id)} to={"/card"}>
               
               <div key={id} className='notifList' style={item.Read === false ? { backgroundColor: '#0765d148' } : {}}>
                     <div className='img'>

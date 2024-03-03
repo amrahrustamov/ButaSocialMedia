@@ -14,6 +14,8 @@ import Notification from '../notification/Notification';
 
 const Header = () => {
   const [notification, setNotification] = useState(false);
+  const [notificationsValue,setNotificationsValue] = useState(null);
+  const [notifyStatus, setNotifyStatus] = useState(false);
   const [exit, setExit] = useState(false);
   const  handleClick = () => {
     setExit(!exit)
@@ -42,6 +44,25 @@ const Header = () => {
     
     getPosts();
   }, []);
+  useEffect(() => {
+    const getNotifications = async () => {
+      try {
+        const response = await axios.get('http://localhost:5065/home/notifications', {
+          withCredentials: true,  
+        });
+        setNotificationsValue(response.data);
+        response.data !== null && response.data.forEach(element => {
+          element.Read === false && setNotifyStatus(true)
+        });
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    getNotifications();
+  },[]);
+
+console.log(notificationsValue);
   return (
     <header>
       <div className="containerHeader">
@@ -61,7 +82,7 @@ const Header = () => {
               <div className="containerOfRightPart">
                 <div className='menu box'><Link><CgMenuGridO /></Link></div>
                 <div className='messages box'><Link><BiSolidMessageDetail /></Link></div>
-                <div className='notifications box'><Link onClick={()=>setNotification(!notification)}><IoMdNotifications /></Link>{notification && <Notification />}</div>
+                <div className='notifications box'><Link onClick={()=>setNotification(!notification)}><IoMdNotifications style={{ color: notifyStatus === true && 'rgba(235, 19, 19, 0.568)'}}/></Link>{notification && <Notification notificationsValue={notificationsValue} />}</div>
                 <div className='profilePhoto box'><Link onClick={handleClick}><img src={user} alt="logo" /></Link></div>
               </div>
               <Exit exit={exit}/>

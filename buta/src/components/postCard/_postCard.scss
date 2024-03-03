@@ -6,6 +6,7 @@
     margin-top: 20px;
     background-color: rgb(255, 255, 255);
     position: relative;
+    box-shadow: 0px 0px 5px 2px #0765d13a;
     .containerYesOrNo{
         position: fixed;
         width: 100%;
@@ -192,12 +193,12 @@
                 height: 80px;
                 border: none;
                 position: absolute;
-                background-color: rgba(255, 255, 255, 0.205);
-                color: rgba(0, 0, 0, 0.432);
+                background-color: rgba(255, 255, 255, 0.404);
+                color: rgba(0, 0, 0, 0.545);
             }
             button:hover{
                 background-color: rgba(46, 46, 46, 0.342);
-                color: black;
+                color: white;
             }
             .prev{
                 bottom: 250px;
@@ -246,37 +247,20 @@
     }
     .bottomPostCard{
 
-        .countOfActivites{
+        .rightPart{
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            .leftPart{
-                    display: flex;
-                    align-items: center;
-                    padding: 5px;
-                    margin: 0 0 0 10px;
-                svg{
-                    color: #1186FD;
-                }
-                span{
-                    margin-left: 3px;
-                    color: #1186FD;
-                }
+            padding: 5px;
+            margin: 0 10px 0 0 ;
+            svg{
+                color: #1186FD;
+                margin-right: 3px;
             }
-            .rightPart{
-                display: flex;
-                align-items: center;
-                padding: 5px;
-                margin: 0 10px 0 0 ;
-                svg{
-                    color: #1186FD;
-                    margin-right: 3px;
-                }
-                span{
-                    color: #1186FD;
-                }
+            span{
+                color: #1186FD;
             }
         }
+        
         .buttons{
             display: flex;
             justify-content: space-around;

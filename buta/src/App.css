@@ -334,6 +334,7 @@ header {
   position: fixed;
   top: 0px;
   z-index: 1;
+  box-shadow: 0px 0px 5px 2px rgba(7, 101, 209, 0.2274509804);
 }
 header .containerHeader {
   width: 100%;
@@ -475,6 +476,7 @@ header .containerHeader .rightPartOfHeader .containerOfRightPart .box img {
   margin-top: 20px;
   background-color: rgb(255, 255, 255);
   position: relative;
+  box-shadow: 0px 0px 5px 2px rgba(7, 101, 209, 0.2274509804);
 }
 .postCard .containerYesOrNo {
   position: fixed;
@@ -634,12 +636,12 @@ header .containerHeader .rightPartOfHeader .containerOfRightPart .box img {
   height: 80px;
   border: none;
   position: absolute;
-  background-color: rgba(255, 255, 255, 0.205);
-  color: rgba(0, 0, 0, 0.432);
+  background-color: rgba(255, 255, 255, 0.404);
+  color: rgba(0, 0, 0, 0.545);
 }
 .postCard .post .slideshow-container button:hover {
   background-color: rgba(46, 46, 46, 0.342);
-  color: black;
+  color: white;
 }
 .postCard .post .slideshow-container .prev {
   bottom: 250px;
@@ -680,35 +682,17 @@ header .containerHeader .rightPartOfHeader .containerOfRightPart .box img {
   color: white;
   background-color: #479cf1;
 }
-.postCard .bottomPostCard .countOfActivites {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.postCard .bottomPostCard .countOfActivites .leftPart {
-  display: flex;
-  align-items: center;
-  padding: 5px;
-  margin: 0 0 0 10px;
-}
-.postCard .bottomPostCard .countOfActivites .leftPart svg {
-  color: #1186FD;
-}
-.postCard .bottomPostCard .countOfActivites .leftPart span {
-  margin-left: 3px;
-  color: #1186FD;
-}
-.postCard .bottomPostCard .countOfActivites .rightPart {
+.postCard .bottomPostCard .rightPart {
   display: flex;
   align-items: center;
   padding: 5px;
   margin: 0 10px 0 0;
 }
-.postCard .bottomPostCard .countOfActivites .rightPart svg {
+.postCard .bottomPostCard .rightPart svg {
   color: #1186FD;
   margin-right: 3px;
 }
-.postCard .bottomPostCard .countOfActivites .rightPart span {
+.postCard .bottomPostCard .rightPart span {
   color: #1186FD;
 }
 .postCard .bottomPostCard .buttons {
@@ -1293,23 +1277,7 @@ header .containerHeader .rightPartOfHeader .containerOfRightPart .box img {
 }
 .listOfNotifications .notificationContainer {
   height: 100%;
-}
-.listOfNotifications .notificationContainer .sectionName {
-  background-color: #0764D1;
-  width: 100%;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.listOfNotifications .notificationContainer .sectionName .textConatiner {
-  width: 115px;
-  height: 35px;
-}
-.listOfNotifications .notificationContainer .sectionName .textConatiner p {
-  color: white;
-  font-size: 20px;
-  font-weight: 600;
+  overflow: scroll;
 }
 .listOfNotifications .notificationContainer .notifList:hover {
   background-color: rgba(128, 128, 128, 0.178);
@@ -1329,11 +1297,11 @@ header .containerHeader .rightPartOfHeader .containerOfRightPart .box img {
 }
 .listOfNotifications .notificationContainer a .notifList .img {
   border: 1px solid black;
-  width: 90px;
+  width: 50px;
   height: 50px;
   border-radius: 50%;
   overflow: hidden;
-  margin: 0px 2px 0px 2px !important;
+  margin: 0px 5px 0px 0px !important;
 }
 .listOfNotifications .notificationContainer a .notifList .img img {
   overflow: hidden;
@@ -1344,13 +1312,15 @@ header .containerHeader .rightPartOfHeader .containerOfRightPart .box img {
   border-radius: 50%;
 }
 .listOfNotifications .notificationContainer a .notifList .info .textInfo {
-  height: auto;
+  height: 50px;
+  width: 150px;
 }
 .listOfNotifications .notificationContainer a .notifList .info .textInfo p {
-  margin: 1px !important;
-  font-size: 14px;
+  margin: 0px 1px !important;
+  font-size: 12px;
+  line-height: 14.5px;
 }
 .listOfNotifications .notificationContainer a .notifList .info .timeInfo p {
   margin: 0px !important;
-  font-size: 10px;
+  font-size: 9px;
 }/*# sourceMappingURL=App.css.map */

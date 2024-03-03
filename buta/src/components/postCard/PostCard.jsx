@@ -23,6 +23,16 @@ const PostCard = (props,index) => {
   const commentHandler = () => {
     setComment(!comment)
   }
+  const likeHandler = (props) => {
+    const id = props;
+    try {
+      axios.post(`http://localhost:5065/home/add-like-to-Blog/${id}`, {
+        withCredentials: true,  
+      });
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  }
   const AcceptRemoveHandler =  async (id) =>{
     const bId = id;
         try {
@@ -70,7 +80,6 @@ const PostCard = (props,index) => {
       return 'Just now';
     }
   }
-  
   return (
     <div className='postCard' key={index}>
       {
@@ -139,11 +148,8 @@ const PostCard = (props,index) => {
           </div>
         </div>
         <div className="bottomPostCard">
-          <div className="countOfActivites">
-            <div className="leftPart">{props.item.Likes && <span><AiOutlineLike /> {props.item.Likes.length}</span>}</div>
-          </div>
           <div className="buttons">
-              <NavLink><AiOutlineLike />{props.item.Likes && <span> {props.item.Likes.length}</span>}</NavLink>
+              <NavLink onClick={()=>likeHandler(props.item.Id)}><AiOutlineLike />{props.item.Likes !== null && <span> {props.item.Likes.length}</span>}</NavLink>
               <NavLink onClick={commentHandler}><FaRegComment />{props.item.Commets && <span> {props.item.Commets.length}</span>}</NavLink>
               <NavLink><PiShareFat /></NavLink>
               <NavLink><HiOutlineClipboardList /></NavLink>
