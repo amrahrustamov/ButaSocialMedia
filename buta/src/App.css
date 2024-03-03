@@ -1315,7 +1315,10 @@ header .containerHeader .rightPartOfHeader .containerOfRightPart .box img {
   background-color: rgba(128, 128, 128, 0.178);
   cursor: pointer;
 }
-.listOfNotifications .notificationContainer .notifList {
+.listOfNotifications .notificationContainer a {
+  color: black;
+}
+.listOfNotifications .notificationContainer a .notifList {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -1324,7 +1327,7 @@ header .containerHeader .rightPartOfHeader .containerOfRightPart .box img {
   margin-bottom: 2px;
   border-radius: 5px;
 }
-.listOfNotifications .notificationContainer .notifList .img {
+.listOfNotifications .notificationContainer a .notifList .img {
   border: 1px solid black;
   width: 90px;
   height: 50px;
@@ -1332,7 +1335,7 @@ header .containerHeader .rightPartOfHeader .containerOfRightPart .box img {
   overflow: hidden;
   margin: 0px 2px 0px 2px !important;
 }
-.listOfNotifications .notificationContainer .notifList .img img {
+.listOfNotifications .notificationContainer a .notifList .img img {
   overflow: hidden;
   -o-object-fit: cover;
      object-fit: cover;
@@ -1340,14 +1343,14 @@ header .containerHeader .rightPartOfHeader .containerOfRightPart .box img {
   height: 100% !important;
   border-radius: 50%;
 }
-.listOfNotifications .notificationContainer .notifList .info .textInfo {
+.listOfNotifications .notificationContainer a .notifList .info .textInfo {
   height: auto;
 }
-.listOfNotifications .notificationContainer .notifList .info .textInfo p {
+.listOfNotifications .notificationContainer a .notifList .info .textInfo p {
   margin: 1px !important;
   font-size: 14px;
 }
-.listOfNotifications .notificationContainer .notifList .info .timeInfo p {
+.listOfNotifications .notificationContainer a .notifList .info .timeInfo p {
   margin: 0px !important;
   font-size: 10px;
 }/*# sourceMappingURL=App.css.map */

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../../App.css'
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const Notification = () => {
     const [notifications,setNotifications] = useState(null);
@@ -39,6 +40,15 @@ const Notification = () => {
           return 'Just now';
         }
       }
+      const SeeNotification = (props) => {
+        try {
+          axios.post(`http://localhost:5065/home/see-notification/${props}`, {
+            withCredentials: true,  
+          });
+        } catch (error) {
+          console.error('Error fetching data:', error);
+        }
+      }
   return (
     <div className='listOfNotifications'>
         <div className='notificationContainer'>
@@ -48,8 +58,9 @@ const Notification = () => {
                 </div>
             </div>
             {notifications !== null && notifications.map((item, id) => (
-
-                <div key={id} className="notifList">
+              <Link onClick={()=>SeeNotification(item.Id)}>
+              
+              <div key={id} className='notifList' style={item.Read === false ? { backgroundColor: '#0765d148' } : {}}>
                     <div className='img'>
                         {item.Sender.ProfileImage !== null && <img src={`http://localhost:5065/home/images/${item.Sender.ProfileImage}`} alt="" />}
                     </div>
@@ -58,6 +69,7 @@ const Notification = () => {
                         <div className='timeInfo'><p>{formatDate(item.DateTime)}</p></div>
                     </div>
                 </div>
+                </Link>
               ))}
         </div>
     </div>

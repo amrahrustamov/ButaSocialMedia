@@ -10,19 +10,19 @@ const Homepage = () => {
   const navigate = useNavigate();
   const [posts, setPosts] = useState([]);
 
-  useEffect(() => {
-  const getCurrenUserId = async () => {
-    try {
-   await axios.get('http://localhost:5065/home/user_id', {
-        withCredentials: true, 
-      });
-    } catch (error) {
-      console.error('Error fetching data:', error);
-      navigate("/sign_in")
-    }
-  };
-  getCurrenUserId();
-}, []);
+//   useEffect(() => {
+//   const getCurrenUserId = async () => {
+//     try {
+//    await axios.get('http://localhost:5065/home/user_id', {
+//         withCredentials: true, 
+//       });
+//     } catch (error) {
+//       console.error('Error fetching data:', error);
+//       navigate("/sign_in")
+//     }
+//   };
+//   getCurrenUserId();
+// }, []);
   useEffect(() => {
     const getPosts = async () => {
       try {
