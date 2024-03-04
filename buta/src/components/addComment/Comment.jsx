@@ -77,6 +77,8 @@ const handleAddComment = (e) => {
     return `${hours} hour${hours > 1 ? 's' : ''} ago`;
   } else if (minutes > 0) {
     return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
+  } else if (seconds > 0) {
+    return 'Just now';
   } else {
     return 'Just now';
   }

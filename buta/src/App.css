@@ -485,6 +485,7 @@ header .containerHeader .rightPartOfHeader .containerOfRightPart .box img {
   background-color: rgba(255, 255, 255, 0.753);
   left: 0;
   top: 0;
+  z-index: 1;
 }
 .postCard .containerYesOrNo .yesOrNo {
   border-radius: 5px;
@@ -719,7 +720,6 @@ header .containerHeader .rightPartOfHeader .containerOfRightPart .box img {
   justify-content: center;
   padding-top: 10px;
   margin: 0 !important;
-  border-top: 1px solid rgba(0, 0, 0, 0.24);
 }
 .commentContainer .comments:hover .settings {
   display: flex;
@@ -1053,7 +1053,6 @@ header .containerHeader .rightPartOfHeader .containerOfRightPart .box img {
   margin-top: 20px;
   min-height: 200px;
   border: none;
-  scrollbar-width: none;
   resize: none;
   box-shadow: 1px 1px 10px 0.1px;
   padding: 10px 20px;
@@ -1080,6 +1079,9 @@ header .containerHeader .rightPartOfHeader .containerOfRightPart .box img {
 }
 .post .addPost .input .tags input {
   width: 100%;
+}
+.post .addPost .input .tags input:focus {
+  outline: none;
 }
 .post .addPost .input .tags .tagsBox {
   display: flex;
@@ -1323,4 +1325,92 @@ header .containerHeader .rightPartOfHeader .containerOfRightPart .box img {
 .listOfNotifications .notificationContainer a .notifList .info .timeInfo p {
   margin: 0px !important;
   font-size: 9px;
+}
+
+.friends {
+  border: 1px solid red;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+.friends .friendsContainer {
+  width: 500px;
+  min-height: 100vh;
+  padding: 10px;
+}
+.friends .friendsContainer .friendCard {
+  border-radius: 10px;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0px 0px 5px 0px;
+  margin: 10px 0px;
+}
+.friends .friendsContainer .friendCard .title {
+  font-weight: 500;
+  font-size: 40px;
+}
+.friends .friendsContainer .friendCard .imageBox {
+  border: 1px solid rgb(55, 0, 255);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 5px 0px;
+  overflow: hidden;
+}
+.friends .friendsContainer .friendCard .imageBox img {
+  width: 80px;
+  height: 80px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.friends .friendsContainer .friendCard .textBox {
+  width: 350px;
+  height: 80px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.friends .friendsContainer .friendCard .textBox .top {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.friends .friendsContainer .friendCard .textBox .top .userName {
+  padding-left: 5px;
+}
+.friends .friendsContainer .friendCard .textBox .top .userName a {
+  font-weight: 600;
+  font-size: 19px;
+  color: black;
+}
+.friends .friendsContainer .friendCard .textBox .top a {
+  margin-right: 15px;
+  font-weight: 500;
+}
+.friends .friendsContainer .friendCard .textBox .middle {
+  width: 100%;
+  height: 28%;
+  padding: 2px;
+}
+.friends .friendsContainer .friendCard .textBox .middle p {
+  font-size: 12px;
+}
+.friends .friendsContainer .friendCard .textBox .bottom {
+  width: 100%;
+  height: 28%;
+  display: flex;
+  flex-direction: row;
+  padding: 2px;
+}
+.friends .friendsContainer .friendCard .textBox .bottom p {
+  font-size: 12px;
 }/*# sourceMappingURL=App.css.map */

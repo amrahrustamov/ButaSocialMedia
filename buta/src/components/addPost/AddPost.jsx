@@ -58,9 +58,9 @@ const AddPost = () => {
           'Content-Type': 'multipart/form-data',
         },
         withCredentials: true,
-      });
-      window.location.reload();
+      }); 
     } catch (error) {
+      setButtonClick(false)
       console.error(error);
     }
   };
@@ -84,9 +84,9 @@ const AddPost = () => {
   };
   
   
-  const [response, setResponse] = useState(false);
+  const [responseB, setResponseB] = useState(false);
   const addPost = () => {
-    setResponse(response === true ? false : true);
+    setResponseB(responseB === true ? false : true);
   }
 
   const handleOnChange = (event) => {
@@ -101,8 +101,7 @@ const AddPost = () => {
       <div className="addButton">
           <Link onClick={addPost} className="add">Add Blog</Link>
       </div>
-      {
-        response === true &&
+     
       <div className="addPost">
         {buttonClick === true ? <div className='spinner'>
         <ClipLoader color="#0764D1" cssOverride={{}} loading size={200} speedMultiplier={0.8} />
@@ -152,7 +151,7 @@ const AddPost = () => {
         </div>
         }
       </div>
-      }
+      
     </form>
   )
 }

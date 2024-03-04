@@ -7,6 +7,7 @@ import Homepage from './pages/public/home/Homepage';
 import { UserProvider } from './context/UserProvider';
 import Profile from './components/profile/Profile';
 import NotFound from './components/notFound/NotFound';
+import Friends from './components/friends/Friends';
 
 function App() {
  
@@ -21,6 +22,7 @@ function App() {
             <Route path='/' element={<Homepage />} />
             <Route path='/profile' element={<Profile />} />
             <Route path='*' element={<NotFound />} />
+            <Route path='/friends' element={<Friends />} />
           </Routes>
         </UserProvider>
       </BrowserRouter>

@@ -13,7 +13,6 @@ import { UserContext } from '../../context/UserProvider';
 import axios from 'axios';
 
 const PostCard = (props,index) => {
-
   const {user} = useContext(UserContext);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [acceptButton, setAcceptButton] = useState(false);
@@ -76,6 +75,8 @@ const PostCard = (props,index) => {
       return `${hours} hour${hours > 1 ? 's' : ''} ago`;
     } else if (minutes > 0) {
       return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
+    } else if (seconds > 0) {
+      return 'Just now';
     } else {
       return 'Just now';
     }

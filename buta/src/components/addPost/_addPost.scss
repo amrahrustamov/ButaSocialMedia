@@ -77,7 +77,6 @@
                 margin-top: 20px;
                 min-height: 200px;
                 border: none;
-                scrollbar-width:  none;
                 resize: none;
                 box-shadow: 1px 1px 10px 0.1px;
                 padding: 10px 20px;
@@ -99,11 +98,16 @@
                 border-radius: 5px;
                 background-color: greenyellow;
             }
+            
             .tags{
                 padding: 0 !important;
                 
                 input{
                     width: 100%;
+                    
+                }
+                input:focus{
+                    outline: none;
                     
                 }
                 .tagsBox{

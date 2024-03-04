@@ -1,0 +1,93 @@
+.friends{
+    border: 1px solid red;
+    width: 100%;
+    min-height:100vh ;
+    display: flex;
+    justify-content: center;  
+
+    .friendsContainer{
+        width: 500px;
+        min-height: 100vh;
+        padding: 10px;
+
+        .friendCard{
+            border-radius: 10px;
+            width: 100%;
+            height: 100px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            box-shadow: 0px 0px 5px 0px;
+            margin: 10px 0px;
+            .title{
+                font-weight: 500;
+                font-size: 40px;
+            }
+
+            .imageBox{
+                border: 1px solid rgb(55, 0, 255);
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                box-shadow: 0px 0px 5px 0px;
+                overflow: hidden;
+                
+
+                img{
+                    width: 80px;
+                    height: 80px;
+                    object-fit: cover;
+                    
+                }
+            }
+            .textBox{
+                width: 350px;
+                height: 80px;
+                border-radius: 10px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                .top{
+                    width: 100%;
+                    height: 40%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    .userName{
+                        padding-left: 5px;
+                        
+                        a{
+                            font-weight: 600;
+                            font-size: 19px;
+                            color: black;
+                        }
+                    }
+                    a{
+                        margin-right: 15px;
+                        font-weight: 500;
+                    }
+                }
+                .middle{
+                    width: 100%;
+                    height: 28%;
+                    padding: 2px;
+                    p{
+                        font-size: 12px;
+                    }
+                }
+                .bottom{
+                    width: 100%;
+                    height: 28%;
+                    display: flex;
+                    flex-direction: row;
+                    padding: 2px;
+                    p{
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
